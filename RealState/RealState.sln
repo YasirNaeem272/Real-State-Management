@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSM", "RSM\RSM.csproj", "{77FC186E-0B76-4552-94A5-692A2F7F87F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSM.BLL", "RSM.BLL\RSM.BLL.csproj", "{665B68F8-C846-4902-AFB7-A5F24EF89066}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{77FC186E-0B76-4552-94A5-692A2F7F87F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77FC186E-0B76-4552-94A5-692A2F7F87F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77FC186E-0B76-4552-94A5-692A2F7F87F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{665B68F8-C846-4902-AFB7-A5F24EF89066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{665B68F8-C846-4902-AFB7-A5F24EF89066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{665B68F8-C846-4902-AFB7-A5F24EF89066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{665B68F8-C846-4902-AFB7-A5F24EF89066}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
