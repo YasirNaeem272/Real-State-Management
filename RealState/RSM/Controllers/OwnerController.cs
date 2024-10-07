@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RSM.BOL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,22 @@ namespace RSM.Controllers
         public ActionResult AddOwner()
         {
             return View();
+        } 
+        [HttpPost]
+        public ActionResult AddOwner(Owner owner)
+        {
+            if(ModelState.IsValid)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            return View();
         }
     }
+
+
 }

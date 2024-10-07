@@ -12,6 +12,8 @@ namespace RSM.BOL.Models
         public int ID { get; set; }
 
         [Required(ErrorMessage = "First Name is required")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "First Name must be between 3 and 50 characters.")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "First Name cannot contain numbers or special characters.")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Last Name is required")]
