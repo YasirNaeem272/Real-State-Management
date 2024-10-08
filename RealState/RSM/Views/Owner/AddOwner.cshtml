@@ -37,16 +37,26 @@
 
     @*recent*@
 
+
+    @*---OwnerType---*@
     <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12">Owner Type</label>
+        @Html.LabelFor(model => model.OwnerType, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
         <div class="col-md-9 col-sm-9 col-xs-12">
-            <select class="form-control">
-                <option>Choose option</option>
-                <option>Inverster</option>
-                <option>Buyer</option>
-            </select>
+            @Html.DropDownListFor(model => model.OwnerType, (IEnumerable<SelectListItem>)ViewBag.OwnerTypes, "Choose option", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.OwnerType, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    @*---Gender---*@
+    <label>Gender *:</label>
+    <p>
+        M:
+        <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> F:
+        <input type="radio" class="flat" name="gender" id="genderF" value="F" />
+    </p>
+
+
+
 
     <div class="row">
         <div class="col-md-6 col-sm-12">

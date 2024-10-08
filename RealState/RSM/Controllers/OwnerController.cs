@@ -12,6 +12,17 @@ namespace RSM.Controllers
         // GET: Owner
         public ActionResult AddOwner()
         {
+            var ownerTypes = Enum.GetValues(typeof(OwnerType)).
+                Cast<OwnerType>().
+                Select(e => new SelectListItem
+                {
+                    Value = ((int)e).ToString(),
+                    Text = e.ToString()
+                }).ToList();
+
+            ViewBag.OwnerTypes = ownerTypes as List<SelectListItem>;
+
+         
             return View();
         } 
         [HttpPost]

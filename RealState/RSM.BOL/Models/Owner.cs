@@ -26,7 +26,7 @@ namespace RSM.BOL.Models
         public string CellNo { get; set; }
 
         [Required(ErrorMessage = "Gender is required")]
-        public string Gender { get; set; }
+        public String Gender { get; set; }
         public string ContactNo { get; set; }
 
         [DataType(DataType.MultilineText)]
@@ -48,9 +48,20 @@ namespace RSM.BOL.Models
         public DateTime DOB { get; set; }
 
         [Required(ErrorMessage = "Owner Type is required")]
-        public string OwnerType { get; set; }
+        public OwnerType OwnerType { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase ImageFile { get; set; }
     }
 }
+
+public enum OwnerType
+{
+    Buyer,
+    Invester
+}
+//public enum Gender
+//{
+//    Male,
+//    Female,
+//}
