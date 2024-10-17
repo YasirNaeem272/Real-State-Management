@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +10,7 @@ namespace RSM.BOL.Models
     public class Owner
     {
         [Key]
-        public int ID { get; set; }
+        public int OwnerId { get; set; }
 
         [Required(ErrorMessage = "First Name is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "First Name must be between 3 and 50 characters.")]
@@ -26,7 +27,7 @@ namespace RSM.BOL.Models
         public string CellNo { get; set; }
 
         [Required(ErrorMessage = "Gender is required")]
-        public String Gender { get; set; }
+        public string Gender { get; set; }
         public string ContactNo { get; set; }
 
         [DataType(DataType.MultilineText)]
@@ -45,23 +46,23 @@ namespace RSM.BOL.Models
         [Required(ErrorMessage = "D.O.B is required")]
         [DisplayName("D.O.B")]
         [DataType(DataType.Date)] // This ensures the input is a date
-        public DateTime DOB { get; set; }
+        public string DOB { get; set; }
 
         [Required(ErrorMessage = "Owner Type is required")]
         public OwnerType OwnerType { get; set; }
 
         [NotMapped]
         public HttpPostedFileBase ImageFile { get; set; }
+
+        public virtual ICollection<Nominee> Nominees { get; set; } /*= new List<Nominee>();*/
+
+        public virtual ICollection<Property> Properties { get; set; }
+        //public DateTime EntryTime { get; set; }
     }
 }
 
 public enum OwnerType
 {
-    Buyer,
-    Invester
+    Buyer = 0,
+    Invester = 1
 }
-//public enum Gender
-//{
-//    Male,
-//    Female,
-//}

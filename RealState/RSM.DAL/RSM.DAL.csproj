@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Context\DBContextClass.cs" />
+    <Compile Include="DatabaseService\DBOperations_Nominees.cs" />
     <Compile Include="Migrations\202410022018044_InitialCreate.cs" />
     <Compile Include="Migrations\202410022018044_InitialCreate.designer.cs">
       <DependentUpon>202410022018044_InitialCreate.cs</DependentUpon>
@@ -61,7 +62,16 @@
     <Compile Include="Migrations\202410022026101_UpdateOwnerTable.designer.cs">
       <DependentUpon>202410022026101_UpdateOwnerTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202410101657443_ChangesInOwnerTable.cs" />
+    <Compile Include="Migrations\202410101657443_ChangesInOwnerTable.designer.cs">
+      <DependentUpon>202410101657443_ChangesInOwnerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs" />
+    <Compile Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.designer.cs">
+      <DependentUpon>202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="DatabaseService\dbOperations_Owners.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +90,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410022026101_UpdateOwnerTable.resx">
       <DependentUpon>202410022026101_UpdateOwnerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410101657443_ChangesInOwnerTable.resx">
+      <DependentUpon>202410101657443_ChangesInOwnerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.resx">
+      <DependentUpon>202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

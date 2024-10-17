@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -130,10 +130,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NomineeController.cs" />
     <Compile Include="Controllers\OwnerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="GlobalMethods\HelperMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -4412,10 +4414,15 @@
     <Content Include="Views\PartialViews\_Footer.cshtml" />
     <Content Include="Views\PartialViews\_Sidebar.cshtml" />
     <Content Include="Views\Owner\AddOwner.cshtml" />
+    <Content Include="Views\Owner\ViewOwners.cshtml" />
+    <Content Include="Views\Shared\_OwnerPartialView.cshtml" />
+    <Content Include="Views\Nominee\AddNominee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="SystemImages\" />
+    <Folder Include="UploadedImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -4445,9 +4452,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RSM.BLL\RSM.BLL.csproj">
+      <Project>{665b68f8-c846-4902-afb7-a5f24ef89066}</Project>
+      <Name>RSM.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RSM.BOL\RSM.BOL.csproj">
       <Project>{27d2f126-0748-451d-ab74-70bb16e3144c}</Project>
       <Name>RSM.BOL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.DAL\RSM.DAL.csproj">
+      <Project>{B0E6075D-B044-471B-9A8A-CC44A6A130C0}</Project>
+      <Name>RSM.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
