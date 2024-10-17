@@ -14,6 +14,7 @@ namespace RSM.DAL.Context
     public class RSMContext:DbContext
     {
         public DbSet<Property> Properties { get; set; }
+        public DbSet<PropertySell> propertySells { get; set; }
         //public DbSet<Owner> Owners { get; set; }
         public RSMContext() : base("AddCon")
         {

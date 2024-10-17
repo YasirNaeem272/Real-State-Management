@@ -22,7 +22,7 @@ namespace RSM.BOL.Models
         public int CornerCharges { get; set; }
         public int DevelopmentCharges { get; set; }
         public int Balance { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string PossessionDate { get; set; }
         public int TotalInsMonth { get; set; }
         public int Recived { get; set; } //(Which User)

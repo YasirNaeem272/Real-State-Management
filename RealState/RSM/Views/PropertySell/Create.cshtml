@@ -1,0 +1,148 @@
+﻿@model RSM.BOL.Models.PropertySell
+<div class="col-md-6 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Form Design <small>different form elements</small></h2>
+            @*<ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>*@
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <br />
+            @using (Html.BeginForm("Create", "PropertySell", FormMethod.Post,
+                new { @class = "form-horizontal form-label-left input_mask", @id = "myForm", @enctype = "multipart/form-data" }))
+            {
+
+                <div class="form-group">
+
+                    @Html.LabelFor(model => model.PlotNo, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.EditorFor(model => model.PlotNo, new { htmlAttributes = new { @class = "form-control", placeholder = "PlotNo" } })
+                        @Html.ValidationMessageFor(model => model.PlotNo, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ProjectName, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.EditorFor(model => model.ProjectName, new { htmlAttributes = new { @Id = "projName", @class = "form-control", placeholder = "ProjectName" } })
+                        @Html.ValidationMessageFor(model => model.ProjectName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Block, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.EditorFor(model => model.Block,
+new
+{
+    htmlAttributes = new { @Id = "block", @class = "form-control", placeholder = "Block" }
+})
+                        @Html.ValidationMessageFor(model => model.Block, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Size, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.DropDownListFor(model => model.Size, new SelectList(ViewBag.SizeList, "Value", "Text"),  // Placeholder text
+new { @Id = "block", @class = "form-control", placeholder = "Block" })
+                        @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PropertyType, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.DropDownListFor(model => model.PropertyType, (SelectList)ViewBag.PropertyList,  // Placeholder text
+                        new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PropertyType, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.North, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.EditorFor(model => model.North, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.North, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.East, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.EditorFor(model => model.East, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.East, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.West, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.EditorFor(model => model.West, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.West, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.South, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.EditorFor(model => model.South, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.South, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StreetNo, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.EditorFor(model => model.StreetNo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StreetNo, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        @Html.DropDownListFor(model => model.Status, (SelectList)ViewBag.StatusList,  // Placeholder text
+ new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                @*<label>Gender *:</label>
+                    <p>
+                        M:
+                        <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> F:
+                        <input type="radio" class="flat" name="gender" id="genderF" value="F" />
+                    </p>*@
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                        @*<button type="button" class="btn btn-primary">Cancel</button>
+                            <button class="btn btn-primary" type="reset">Reset</button>*@
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
