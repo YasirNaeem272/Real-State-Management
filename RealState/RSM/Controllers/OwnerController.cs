@@ -9,7 +9,7 @@ namespace RSM.Controllers
     public class OwnerController : Controller
     {
         private ImageValidation _imageValidation = new ImageValidation();
-        private dbOperations_Owners _dbOperations = new dbOperations_Owners();
+        private DBOperations_Owners _dbOperations = new DBOperations_Owners();
 
         public ActionResult ViewOwners(int propertyId = 0, bool isSelectionMode = false)
         {

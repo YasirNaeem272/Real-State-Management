@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace RSM.DAL.DatabaseService
 {
-    public class dbOperations_Owners
+    public class DBOperations_Owners
     {
         private const string ownerDefaultImagePath = "~/SystemImages/NoUserImage.png";
         private DBContextClass db = new DBContextClass();

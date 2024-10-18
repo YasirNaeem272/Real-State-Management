@@ -54,6 +54,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Context\DBContextClass.cs" />
     <Compile Include="DatabaseService\DBOperations_Nominees.cs" />
+    <Compile Include="DatabaseService\DBOperations_Property.cs" />
     <Compile Include="Migrations\202410022018044_InitialCreate.cs" />
     <Compile Include="Migrations\202410022018044_InitialCreate.designer.cs">
       <DependentUpon>202410022018044_InitialCreate.cs</DependentUpon>
@@ -71,7 +72,7 @@
       <DependentUpon>202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="DatabaseService\dbOperations_Owners.cs" />
+    <Compile Include="DatabaseService\DBOperations_Owners.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

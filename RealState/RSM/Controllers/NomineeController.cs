@@ -72,23 +72,6 @@ namespace RSM.Controllers
             ModelState.Clear();
             return View();
         }
-
-
-        //This work will done in property sell table do Here just for now
-        //private DBContextClass db = new DBContextClass();
-
-        ////[HttpPost]
-        //public ActionResult ConfirmSale(int ownerId, int propertyId)
-        //{
-        //    var property = db.Properties.Find(propertyId);
-        //    if (property != null)
-        //    {
-        //        property.OwnerId = ownerId; // Assign the selected OwnerID
-        //        property.PropertyStatus = PropertyStatus.Sold; // Update the status
-        //        db.SaveChanges();
-        //    }
-        //    return RedirectToAction("ViewProperties","Property"); // Redirect back to the list of properties
-        //}
     }
 
 }
