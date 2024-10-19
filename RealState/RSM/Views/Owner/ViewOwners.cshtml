@@ -1,4 +1,4 @@
-﻿@model IEnumerable< RSM.BOL.Models.Owner >
+﻿@model IEnumerable<RSM.BOL.Models.Owner>
 
 @{
     ViewBag.Title = "ViewOwners";
@@ -7,13 +7,26 @@
 <h2>ViewOwners</h2>
 
 <p>
-    @Html.ActionLink("Create New", "AddOwner")
+    <a href="@Url.Action("AddOwner", "Owner")" class="btn btn-success">
+        <strong>Create New </strong>&nbsp;&nbsp;<i class="fa fa-plus"> </i>
+    </a>
 </p>
 
-<div class="row no-gutters">
-    @foreach (var item in Model)
-    {
-        @Html.Partial("_OwnerPartialView", item,new ViewDataDictionary { { "PropertyID", ViewBag.PropertyID } })
-    }
+
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        @Html.Partial("_OwnerPartialView", item, new ViewDataDictionary { { "PropertyID", ViewBag.PropertyID } })
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 

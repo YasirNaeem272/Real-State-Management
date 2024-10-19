@@ -76,12 +76,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RSM.BOL\RSM.BOL.csproj">
-      <Project>{27d2f126-0748-451d-ab74-70bb16e3144c}</Project>
-      <Name>RSM.BOL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -98,6 +92,12 @@
     <EmbeddedResource Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.resx">
       <DependentUpon>202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RSM.BOL\RSM.BOL.csproj">
+      <Project>{27d2f126-0748-451d-ab74-70bb16e3144c}</Project>
+      <Name>RSM.BOL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
