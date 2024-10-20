@@ -97,8 +97,17 @@
     <Compile Include="Migrations\202410111104585_CorrectProperty.designer.cs">
       <DependentUpon>202410111104585_CorrectProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202410171149293_AddPropertySellC.cs" />
+    <Compile Include="Migrations\202410171149293_AddPropertySellC.designer.cs">
+      <DependentUpon>202410171149293_AddPropertySellC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410171601469_UpdatePropertySell.cs" />
+    <Compile Include="Migrations\202410171601469_UpdatePropertySell.designer.cs">
+      <DependentUpon>202410171601469_UpdatePropertySell.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertySellDb.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -140,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410111104585_CorrectProperty.resx">
       <DependentUpon>202410111104585_CorrectProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410171149293_AddPropertySellC.resx">
+      <DependentUpon>202410171149293_AddPropertySellC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410171601469_UpdatePropertySell.resx">
+      <DependentUpon>202410171601469_UpdatePropertySell.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

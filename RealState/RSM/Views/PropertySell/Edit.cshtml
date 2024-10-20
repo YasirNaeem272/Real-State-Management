@@ -26,10 +26,10 @@
         </div>
         <div class="x_content">
             <br />
-            @using (Html.BeginForm("Create", "PropertySell", FormMethod.Post,
+            @using (Html.BeginForm("Edit", "PropertySell", FormMethod.Post,
                 new { @class = "form-horizontal form-label-left input_mask", @id = "myForm", @enctype = "multipart/form-data" }))
             {
-
+                @Html.HiddenFor(model=>model.ID)
                 <div class="form-group">
 
                     @Html.LabelFor(model => model.Onbooking, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
@@ -63,7 +63,7 @@ new
                     @Html.LabelFor(model => model.Type, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
                         @Html.DropDownListFor(model => model.Type, new SelectList(ViewBag.typeList, "Value", "Text"),  // Placeholder text
-new {@class = "form-control", placeholder = "Type" })
+new { @class = "form-control", placeholder = "Type" })
                         @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
 
                     </div>
@@ -72,7 +72,7 @@ new {@class = "form-control", placeholder = "Type" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.CornerCharges, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.CornerCharges, new { htmlAttributes = new { @class = "form-control",placeholder= "CornerCharges" } })
+                        @Html.EditorFor(model => model.CornerCharges, new { htmlAttributes = new { @class = "form-control", placeholder = "CornerCharges" } })
                         @Html.ValidationMessageFor(model => model.CornerCharges, "", new { @class = "text-danger" })
 
                     </div>
@@ -88,7 +88,7 @@ new {@class = "form-control", placeholder = "Type" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.Balance, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.Balance, new { htmlAttributes = new { @class = "form-control",placeholder= "Balance" } })
+                        @Html.EditorFor(model => model.Balance, new { htmlAttributes = new { @class = "form-control", placeholder = "Balance" } })
                         @Html.ValidationMessageFor(model => model.Balance, "", new { @class = "text-danger" })
 
                     </div>
@@ -96,7 +96,7 @@ new {@class = "form-control", placeholder = "Type" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.Date, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control",placeholder= "Date" } })
+                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", placeholder = "Date" } })
                         @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
 
                     </div>
@@ -104,7 +104,7 @@ new {@class = "form-control", placeholder = "Type" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.PossessionDate, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.PossessionDate, new { htmlAttributes = new { @class = "form-control",placeholder= "PossessionDate" } })
+                        @Html.EditorFor(model => model.PossessionDate, new { htmlAttributes = new { @class = "form-control", placeholder = "PossessionDate" } })
                         @Html.ValidationMessageFor(model => model.PossessionDate, "", new { @class = "text-danger" })
 
                     </div>
@@ -112,7 +112,7 @@ new {@class = "form-control", placeholder = "Type" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.TotalCostOfLand, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.TotalCostOfLand, new { htmlAttributes = new { @class = "form-control",placeholder= "TotalCostOfLand" } })
+                        @Html.EditorFor(model => model.TotalCostOfLand, new { htmlAttributes = new { @class = "form-control", placeholder = "TotalCostOfLand" } })
                         @Html.ValidationMessageFor(model => model.TotalCostOfLand, "", new { @class = "text-danger" })
 
                     </div>
@@ -120,7 +120,7 @@ new {@class = "form-control", placeholder = "Type" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.Recived, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.Recived, new { htmlAttributes = new { @class = "form-control", placeholder= "Recived" } })
+                        @Html.EditorFor(model => model.Recived, new { htmlAttributes = new { @class = "form-control", placeholder = "Recived" } })
                         @Html.ValidationMessageFor(model => model.Recived, "", new { @class = "text-danger" })
 
                     </div>
@@ -138,7 +138,7 @@ new {@class = "form-control", placeholder = "Type" })
                 <div class="form-group">
                     <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
                         @*<button type="button" class="btn btn-primary">Cancel</button>
-                    <button class="btn btn-primary" type="reset">Reset</button>*@
+                            <button class="btn btn-primary" type="reset">Reset</button>*@
                         <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </div>

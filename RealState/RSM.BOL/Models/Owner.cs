@@ -15,6 +15,7 @@ namespace RSM.BOL.Models
         public string LastName { get; set; }
         public string CNIC { get; set; }
         public string CellNo { get; set; }
+        //public int OwnerIdTest {  get; set; }
     }
 
 }

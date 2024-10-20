@@ -39,6 +39,8 @@ namespace RSM.Controllers
 
             //ViewBag.SizeList = new SelectList(sizeList, "Value", "Text");
             ViewBag.SizeList = new SelectList(Helper.GetEnumSelectList<Size>(), "Value", "Text");
+            ViewBag.PropertyList = new SelectList(Helper.GetEnumSelectList<PropertType>(), "Value", "Text");
+            ViewBag.StatusList = new SelectList(Helper.GetEnumSelectList<Status>(), "Value", "Text");
 
 
             //
@@ -50,7 +52,6 @@ namespace RSM.Controllers
             //propertList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
 
             //ViewBag.PropertyList = new SelectList(propertList, "Value", "Text");
-            ViewBag.PropertyList = new SelectList(Helper.GetEnumSelectList<PropertType>(), "Value", "Text");
 
             //
             //     var statusList = Enum.GetValues(typeof(Status))
@@ -61,7 +62,6 @@ namespace RSM.Controllers
             //     statusList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
 
             //     ViewBag.StatusList = new SelectList(statusList, "Value", "Text");
-            ViewBag.StatusList = new SelectList(Helper.GetEnumSelectList<Status>(), "Value", "Text");
 
 
             return View();
@@ -69,15 +69,19 @@ namespace RSM.Controllers
         [HttpPost]
         public ActionResult Create(Property property)
         {
+            ViewBag.SizeList = new SelectList(Helper.GetEnumSelectList<Size>(), "Value", "Text");
+            ViewBag.PropertyList = new SelectList(Helper.GetEnumSelectList<PropertType>(), "Value", "Text");
+            ViewBag.StatusList = new SelectList(Helper.GetEnumSelectList<Status>(), "Value", "Text");
             try
             {
-                //if (ModelState.IsValid)
-                //{
-                _ctx.Properties.Add(property);
-                _ctx.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    property.OwnerID = 2;
+                    _ctx.Properties.Add(property);
+                    _ctx.SaveChanges();
+                    return RedirectToAction("Index");
 
-                //}
+                }
             }
             catch (DbEntityValidationException ex)
             {
@@ -89,40 +93,44 @@ namespace RSM.Controllers
                         System.Diagnostics.Debug.WriteLine($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
                     }
                 }
-            } 
+            }
             return View();
         }
         [HttpGet]
         public ActionResult Edit(int Id)
         {
-            var sizeList = Enum.GetValues(typeof(Size))
-                  .Cast<Size>()
-                  .Select(s => new { Value = s.ToString(), Text = s.ToString() })
-                  .ToList();
+            ViewBag.SizeList = new SelectList(Helper.GetEnumSelectList<Size>(), "Value", "Text");
+            ViewBag.PropertyList = new SelectList(Helper.GetEnumSelectList<PropertType>(), "Value", "Text");
+            ViewBag.StatusList = new SelectList(Helper.GetEnumSelectList<Status>(), "Value", "Text");
 
-            sizeList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
+            //     var sizeList = Enum.GetValues(typeof(Size))
+            //           .Cast<Size>()
+            //           .Select(s => new { Value = s.ToString(), Text = s.ToString() })
+            //           .ToList();
 
-            ViewBag.SizeList = new SelectList(sizeList, "Value", "Text");
+            //     sizeList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
+
+            //     ViewBag.SizeList = new SelectList(sizeList, "Value", "Text");
 
 
-            //
-            var propertList = Enum.GetValues(typeof(PropertType))
-                   .Cast<PropertType>()
-                   .Select(s => new { Value = s.ToString(), Text = s.ToString() })
-                   .ToList();
+            //     //
+            //     var propertList = Enum.GetValues(typeof(PropertType))
+            //            .Cast<PropertType>()
+            //            .Select(s => new { Value = s.ToString(), Text = s.ToString() })
+            //            .ToList();
 
-            propertList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
+            //     propertList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
 
-            ViewBag.PropertyList = new SelectList(propertList, "Value", "Text");
-            //
-            var statusList = Enum.GetValues(typeof(Status))
-       .Cast<Status>()
-       .Select(s => new { Value = s.ToString(), Text = s.ToString() })
-       .ToList();
+            //     ViewBag.PropertyList = new SelectList(propertList, "Value", "Text");
+            //     //
+            //     var statusList = Enum.GetValues(typeof(Status))
+            //.Cast<Status>()
+            //.Select(s => new { Value = s.ToString(), Text = s.ToString() })
+            //.ToList();
 
-            statusList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
+            //     statusList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
 
-            ViewBag.StatusList = new SelectList(statusList, "Value", "Text");
+            //     ViewBag.StatusList = new SelectList(statusList, "Value", "Text");
 
             var data = _ctx.Properties.Find(Id);
             //string idString = EncodeHash(data.ID);

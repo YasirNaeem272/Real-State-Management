@@ -1,6 +1,5 @@
-﻿@model IEnumerable<RSM.BOL.Models.Property>
-<div class="form-group">
-</div>
+﻿
+@model IEnumerable<RSM.BOL.Models.PropertySell>
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
         @*<div class="x_title">
@@ -34,40 +33,40 @@
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.PlotNo)
+                            @Html.DisplayNameFor(model => model.Onbooking)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.ProjectName)
+                            @Html.DisplayNameFor(model => model.PossessionCharges)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Block)
+                            @Html.DisplayNameFor(model => model.TotalCostOfLand)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Size)
+                            @Html.DisplayNameFor(model => model.Type)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.PropertyType)
+                            @Html.DisplayNameFor(model => model.CornerCharges)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.North)
+                            @Html.DisplayNameFor(model => model.DevelopmentCharges)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.East)
+                            @Html.DisplayNameFor(model => model.Balance)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.West)
+                            @Html.DisplayNameFor(model => model.Date)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.South)
+                            @Html.DisplayNameFor(model => model.PossessionDate)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.StreetNo)
+                            @Html.DisplayNameFor(model => model.TotalCostOfLand)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.OwnerID)
+                            @Html.DisplayNameFor(model => model.Recived)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Status)
+                            @Html.DisplayNameFor(model => model.CareOf)
                         </th>
                         <th>Actions</th>
                     </tr>
@@ -81,44 +80,44 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.PlotNo)
+                                @Html.DisplayFor(modelItem => item.Onbooking)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.ProjectName)
+                                @Html.DisplayFor(modelItem => item.PossessionCharges)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Block)
+                                @Html.DisplayFor(modelItem => item.TotalCostOfLand)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Size)
+                                @Html.DisplayFor(modelItem => item.Type)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.PropertyType)
+                                @Html.DisplayFor(modelItem => item.CornerCharges)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.North)
+                                @Html.DisplayFor(modelItem => item.DevelopmentCharges)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.East)
+                                @Html.DisplayFor(modelItem => item.Balance)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.West)
+                                @Html.DisplayFor(modelItem => item.Date)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.South)
+                                @Html.DisplayFor(modelItem => item.PossessionDate)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.StreetNo)
+                                @Html.DisplayFor(modelItem => item.TotalCostOfLand)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.OwnerID)
+                                @Html.DisplayFor(modelItem => item.Recived)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Status)
+                                @Html.DisplayFor(modelItem => item.CareOf)
                             </td>
                             <td>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) @*|
-                                @Html.ActionLink("Details", "Index", new { id = item.ID }) |*@
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |*@
                                 @*@Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
                             </td>
                         </tr>

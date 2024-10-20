@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\OwnerController.cs" />
     <Compile Include="Controllers\PropertyController.cs" />
     <Compile Include="Controllers\PropertySellController.cs" />
     <Compile Include="Global.asax.cs">
@@ -4415,6 +4416,9 @@
     <Content Include="Views\Property\Index.cshtml" />
     <Content Include="Views\Property\Edit.cshtml" />
     <Content Include="Views\PropertySell\Create.cshtml" />
+    <Content Include="Views\PropertySell\Edit.cshtml" />
+    <Content Include="Views\PropertySell\Index.cshtml" />
+    <Content Include="Views\Owner\GetProperty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
