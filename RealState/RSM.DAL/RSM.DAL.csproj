@@ -55,8 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Context\RSMContext.cs" />
+    <Compile Include="DatabaseService\DBOperations.cs" />
+    <Compile Include="DatabaseService\DBOperations_Nominees.cs" />
+    <Compile Include="DatabaseService\dbOperations_Owners.cs" />
+    <Compile Include="DatabaseService\DBOperations_Property.cs" />
     <Compile Include="Migrations\202410021733060_InitialCreate.cs" />
     <Compile Include="Migrations\202410021733060_InitialCreate.designer.cs">
       <DependentUpon>202410021733060_InitialCreate.cs</DependentUpon>
@@ -105,9 +108,13 @@
     <Compile Include="Migrations\202410171601469_UpdatePropertySell.designer.cs">
       <DependentUpon>202410171601469_UpdatePropertySell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.cs" />
+    <Compile Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.designer.cs">
+      <DependentUpon>202410201946115_DatabaseUpdateAfterMerge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertySellDb.cs" />
+    <Compile Include="DatabaseService\PropertySellDb.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -155,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410171601469_UpdatePropertySell.resx">
       <DependentUpon>202410171601469_UpdatePropertySell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.resx">
+      <DependentUpon>202410201946115_DatabaseUpdateAfterMerge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

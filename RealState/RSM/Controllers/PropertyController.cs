@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.SqlServer.Server;
+using Newtonsoft.Json.Linq;
 using RSM.BOL.Models;
 using RSM.DAL.Context;
+using RSM.DAL.DatabaseService;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Html;
-using Size = RSM.BOL.Models.Size;
 
 namespace RSM.Controllers
 {
@@ -24,64 +25,23 @@ namespace RSM.Controllers
             _ctx = new RSMContext();
         }
         //[HttpGet]
-        public ActionResult Create()
+        public ActionResult AddProperty()
         {
             Property property = new Property();
-            //ViewBag.SizeList = new SelectList(Enum.GetValues(typeof(Size)).Cast<Size>().Select(s => new
-            //{
-            //    Value = s.ToString(),
-            //    Text = s.ToString()
-            //}), "Value", "Text");
-            //var sizeList = Enum.GetValues(typeof(Size))
-            //       .Cast<Size>()
-            //       .Select(s => new { Value = s.ToString(), Text = s.ToString() })
-            //       .ToList();
-
-            //sizeList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
-
-            //ViewBag.SizeList = new SelectList(sizeList, "Value", "Text");
-            ViewBag.SizeList = new SelectList(Helper.GetEnumSelectList<Size>(), "Value", "Text");
-            ViewBag.PropertyList = new SelectList(Helper.GetEnumSelectList<PropertType>(), "Value", "Text");
-            ViewBag.StatusList = new SelectList(Helper.GetEnumSelectList<Status>(), "Value", "Text");
-
-
-            //
-            //var propertList = Enum.GetValues(typeof(PropertType))
-            //       .Cast<PropertType>()
-            //       .Select(s => new { Value = s.ToString(), Text = s.ToString() })
-            //       .ToList();
-
-            //propertList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
-
-            //ViewBag.PropertyList = new SelectList(propertList, "Value", "Text");
-
-            //
-            //     var statusList = Enum.GetValues(typeof(Status))
-            //.Cast<Status>()
-            //.Select(s => new { Value = s.ToString(), Text = s.ToString() })
-            //.ToList();
-
-            //     statusList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
-
-            //     ViewBag.StatusList = new SelectList(statusList, "Value", "Text");
-
+            
 
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Property property)
+        public ActionResult AddProperty(Property property)
         {
-            ViewBag.SizeList = new SelectList(Helper.GetEnumSelectList<Size>(), "Value", "Text");
-            ViewBag.PropertyList = new SelectList(Helper.GetEnumSelectList<PropertType>(), "Value", "Text");
-            ViewBag.StatusList = new SelectList(Helper.GetEnumSelectList<Status>(), "Value", "Text");
             try
             {
                 if (ModelState.IsValid)
                 {
-                    property.OwnerID = 2;
                     _ctx.Properties.Add(property);
                     _ctx.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("ViewProperties");
 
                 }
             }
@@ -99,41 +59,9 @@ namespace RSM.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Edit(int Id)
+        public ActionResult EditProperty(int Id)
         {
-            ViewBag.SizeList = new SelectList(Helper.GetEnumSelectList<Size>(), "Value", "Text");
-            ViewBag.PropertyList = new SelectList(Helper.GetEnumSelectList<PropertType>(), "Value", "Text");
-            ViewBag.StatusList = new SelectList(Helper.GetEnumSelectList<Status>(), "Value", "Text");
-
-            //     var sizeList = Enum.GetValues(typeof(Size))
-            //           .Cast<Size>()
-            //           .Select(s => new { Value = s.ToString(), Text = s.ToString() })
-            //           .ToList();
-
-            //     sizeList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
-
-            //     ViewBag.SizeList = new SelectList(sizeList, "Value", "Text");
-
-
-            //     //
-            //     var propertList = Enum.GetValues(typeof(PropertType))
-            //            .Cast<PropertType>()
-            //            .Select(s => new { Value = s.ToString(), Text = s.ToString() })
-            //            .ToList();
-
-            //     propertList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
-
-            //     ViewBag.PropertyList = new SelectList(propertList, "Value", "Text");
-            //     //
-            //     var statusList = Enum.GetValues(typeof(Status))
-            //.Cast<Status>()
-            //.Select(s => new { Value = s.ToString(), Text = s.ToString() })
-            //.ToList();
-
-            //     statusList.Insert(0, new { Value = "", Text = "Select Size" }); // Add placeholder
-
-            //     ViewBag.StatusList = new SelectList(statusList, "Value", "Text");
-
+            
             var data = _ctx.Properties.Find(Id);
             //string idString = EncodeHash(data.ID);
             //data.ID = Convert.ToInt16(idString);
@@ -149,28 +77,18 @@ namespace RSM.Controllers
         //    }
         //}
         [HttpPost]
-        public ActionResult Edit(Property model)
+        public ActionResult EditProperty(Property model)
         {
-            var data = _ctx.Properties.Find(model.ID);
-            if (data != null)
-            {
-                data.PlotNo = model.PlotNo;
-                data.ProjectName = model.ProjectName;
-                data.Block = model.Block;
-                data.Size = model.Size;
-                data.PropertyType = model.PropertyType;
-                data.North = model.North;
-                data.South = model.South;
-                data.West = model.West;
-                data.East = model.East;
-                data.StreetNo = model.StreetNo;
-                //data.OpenSide = model.OpenSide;
+            //var data = _ctx.Properties.Find(model.PropertyID);
+            //if (data != null)
+            //{
+                _ctx.Entry(model).State=EntityState.Modified;
                 _ctx.SaveChanges();
-            }
-            return RedirectToAction("Index");
+            //}
+            return RedirectToAction("ViewProperties");
         }
 
-        public ActionResult Index()
+        public ActionResult ViewProperties()
         {
             var list = _ctx.Properties.ToList();
             return View(list);
@@ -180,7 +98,7 @@ namespace RSM.Controllers
             var list = _ctx.Properties.Find(id);
             _ctx.Properties.Remove(list);
             _ctx.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewProperties");
         }
  //This work will done in property sell table do Here just for now
         public ActionResult ConfirmSale(int ownerId, int propertyId)
@@ -200,6 +118,14 @@ namespace RSM.Controllers
                 PropertyStatus = PropertyStatus.Available,
             };
 
+        }
+
+
+        public ActionResult GetPropertiesByOwnerId(int ownerId)
+        {
+            var properties=_dbOperations.GetPropertiesByOwner(ownerId).Count();
+            
+            return View();
         }
     }
 }

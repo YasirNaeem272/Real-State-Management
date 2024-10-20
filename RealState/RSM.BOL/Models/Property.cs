@@ -17,16 +17,16 @@ namespace RSM.BOL.Models
         [DisplayName("Plot #")]
         public string PlotNo { get; set; }
 
-[Required]
+        [Required]
         public string ProjectName { get; set; }
         [Required]
         public string Block { get; set; }
-         [Required]
-        public string Size { get; set; }
+        [Required]
+        public PropertySize Size { get; set; }
         [DisplayName("Property Type")]
         [Required(ErrorMessage = "Property Type is required")]
         public PropertyType PropertyType { get; set; }
-         [Required]
+        [Required]
         public string North { get; set; }
         [Required]
         public string East { get; set; }
@@ -47,19 +47,20 @@ namespace RSM.BOL.Models
     }
 }
 
-public enum PropertyType { 
+public enum PropertyType
+{
     Residential,
     Commercial,
-    [Display( Name ="Semi-Commercial")]
+    [Display(Name = "Semi-Commercial")]
     SemiCommercial
 }
-  public enum Size
-    {
-        Small=1,
-        Medium=2,
-        Large=3,
-        LargeSmall=4,
-    }
+public enum PropertySize
+{
+    Small = 1,
+    Medium = 2,
+    Large = 3,
+    LargeSmall = 4,
+}
 public enum PropertyStatus
 {
     Sold,

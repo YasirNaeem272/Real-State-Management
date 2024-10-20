@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RSM.DAL
+namespace RSM.DAL.DatabaseService
 {
     public class PropertySellDb
     {

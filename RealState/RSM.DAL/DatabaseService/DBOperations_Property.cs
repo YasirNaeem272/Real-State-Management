@@ -6,33 +6,40 @@ using System.Linq;
 
 namespace RSM.DAL.DatabaseService
 {
-    public class DBOperations_Property
+    public class DBOperations_Property:DBOperations
     {
-        private DBContextClass db = new DBContextClass();
         public bool InsertPropertyData(Property property)
         {
-            db.Properties.Add(property);
-            int rowInserted = db.SaveChanges();
+            _ctx.Properties.Add(property);
+            int rowInserted = _ctx.SaveChanges();
 
             return rowInserted > 0;
         }
 
         public List<Property> GetProperties()
         {
-            return db.Properties.ToList();
+            return _ctx.Properties.ToList();
         }
 
         public bool UpdatePropertyOwner(int ownerId, int propertyId)
         {
-            var property = db.Properties.Find(propertyId);
+            var property = _ctx.Properties.Find(propertyId);
             if (property != null)
             {
                 property.OwnerId = ownerId; // Assign the selected OwnerID
                 property.PropertyStatus = PropertyStatus.Sold; // Update the status
-                int rowInserted = db.SaveChanges();
+                int rowInserted = _ctx.SaveChanges();
                 return rowInserted > 0;
             }
             return false;
         }
+        
+        public List<Property> GetPropertiesByOwner(int id)
+        {
+            return  _ctx.Properties
+                    .Where(p => p.OwnerId == id).ToList();
+            //return Json(properties, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
