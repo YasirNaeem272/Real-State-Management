@@ -1,0 +1,60 @@
+﻿@model RSM.BOL.Models.Owner
+@{
+    int propertyId = ViewData["PropertyID"] != null ? (int)ViewData["PropertyID"] : 0;
+}
+
+
+<div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+    <div class="well profile_view">
+        <div class="col-sm-12">
+            <h4 class="brief"><i>@Model.OwnerType</i></h4>
+            <div class="left col-xs-7">
+                <h2>@Model.FirstName @Model.LastName</h2>
+                <p><strong>About: </strong> Web Designer / UI. </p>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-credit-card-alt"></i>  CNIC: @Model.CNIC</li>
+                    <li><i class="fa fa-phone"></i>  Phone #: @Model.CellNo </li>
+                </ul>
+            </div>
+            <div class="right col-xs-5 text-center">
+                <img src="@Url.Content(Model.ImagePath)" alt="" class="img-circle img-responsive">
+            </div>
+        </div>
+        <div class="col-xs-12 bottom text-center">
+            <div class="col-xs-12 emphasis">
+
+                @*---ViewNomineesButton---*@
+                <button type="button" class="btn btn-primary btn-round">
+                    <i class="fa fa-users"> </i> Nominees
+                </button>
+                @*---EditOwnerButton---*@
+               
+                <a href=" @Url.Action("EditOwner", "Owner", new { ownerId = Model.OwnerId})"
+                   class="btn btn-primary btn-round">
+                    <i class="fa fa-edit"> </i> Edit
+                </a>
+
+                @*---EditDeleteButton---*@
+
+                <a href=" @Url.Action("Delete", "Owner", new { ownerId = Model.OwnerId})"
+                   class="btn btn-danger btn-round">
+                    <i class="fa fa-trash"> </i> Delete
+                </a>
+
+                @*--SelectButton---*@
+
+                <a href=" @Url.Action("ViewNominees", "Nominee", new { ownerId = Model.OwnerId, propertyId = propertyId })"
+                   class="btn btn-success btn-round">
+                    Select
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

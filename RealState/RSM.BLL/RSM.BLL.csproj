@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,18 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ImageValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertySellBLL.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RSM.BOL\RSM.BOL.csproj">
-      <Project>{27d2f126-0748-451d-ab74-70bb16e3144c}</Project>
-      <Name>RSM.BOL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RSM.DAL\RSM.DAL.csproj">
-      <Project>{b0e6075d-b044-471b-9a8a-cc44a6a130c0}</Project>
-      <Name>RSM.DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

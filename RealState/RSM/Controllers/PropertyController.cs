@@ -15,6 +15,8 @@ namespace RSM.Controllers
 {
     public class PropertyController : Controller
     {
+    private DBOperations_Property _dbOperations = new DBOperations_Property();
+
         // GET: Property
         private readonly RSMContext _ctx;
         public PropertyController()
@@ -180,6 +182,24 @@ namespace RSM.Controllers
             _ctx.SaveChanges();
             return RedirectToAction("Index");
         }
+ //This work will done in property sell table do Here just for now
+        public ActionResult ConfirmSale(int ownerId, int propertyId)
+        {
+            _dbOperations.UpdatePropertyOwner(ownerId, propertyId);
 
+
+            return RedirectToAction("ViewProperties", "Property"); // Redirect back to the list of properties
+        }
+
+        private Property CreateDummyData()
+        {
+            return new Property
+            {
+                PlotNo = "D-97",
+                PropertyType = PropertyType.Commercial,
+                PropertyStatus = PropertyStatus.Available,
+            };
+
+        }
     }
 }
