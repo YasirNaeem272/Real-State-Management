@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Type = RSM.BOL.Models.Type;
+using PaymentPlan = RSM.BOL.Models.PaymentPlan;
 
 namespace RSM.Controllers
 {
@@ -16,17 +16,25 @@ namespace RSM.Controllers
         {
             _ctx = new RSMContext();
         }
-        // GET: PropertySell
+        //property Id = 1
+        //OwnerId = 3
+
+        public ActionResult ConfirmSale()
+        {
+            return View();
+        }
+
+
         public ActionResult Create()
         {
-            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<Type>(), "Value", "Text");
+            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<PaymentPlan>(), "Value", "Text");
 
             return View();
         }
         [HttpPost]
         public ActionResult Create(PropertySell propertySell)
         {
-            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<Type>(), "Value", "Text");
+            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<PaymentPlan>(), "Value", "Text");
             if (ModelState.IsValid)
             {
                 propertySell.PropertyID = 1;
@@ -40,7 +48,7 @@ namespace RSM.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<Type>(), "Value", "Text");
+            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<PaymentPlan>(), "Value", "Text");
 
             var data = _ctx.propertySells.Find(id);
             return View(data);
@@ -48,22 +56,22 @@ namespace RSM.Controllers
         [HttpPost]
         public ActionResult Edit(PropertySell model) 
         {
-            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<Type>(), "Value", "Text");
+            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<PaymentPlan>(), "Value", "Text");
             var data = _ctx.propertySells.Find(model.ID);
             if(data != null && ModelState.IsValid)
             {
 
                 data.CornerCharges = model.CornerCharges;
                 data.PossessionCharges= model.PossessionCharges;
-                data.Onbooking = model.Onbooking;
-                data.Recived = model.Recived;
+                data.PaymentOnBooking = model.PaymentOnBooking;
+                data.EntryByUser = model.EntryByUser;
                 data.Balance = model.Balance;
-                data.Recived =model.Recived;
-                data.Date = model.Date;
+                data.EntryByUser =model.EntryByUser;
+                data.SoldDate = model.SoldDate;
                 data.DevelopmentCharges = model.DevelopmentCharges;
-                data.TotalCostOfLand = model.TotalCostOfLand;
-                data.TotalInsMonth  = model.TotalInsMonth;
-                data.Type   = model.Type;
+                data.TotalCostOfProperty = model.TotalCostOfProperty;
+                data.NumberOfInstallments  = model.NumberOfInstallments;
+                //data.Type   = model.Type;
             }
             return View();
         }

@@ -29,21 +29,21 @@
                 </button>
                 @*---EditOwnerButton---*@
                
-                <a href=" @Url.Action("EditOwner", "Owner", new { ownerId = Model.OwnerId})"
+                <a href=" @Url.Action("EditOwner", "Owner", new { ownerId = Model.OwnerID})"
                    class="btn btn-primary btn-round">
                     <i class="fa fa-edit"> </i> Edit
                 </a>
 
                 @*---EditDeleteButton---*@
 
-                <a href=" @Url.Action("Delete", "Owner", new { ownerId = Model.OwnerId})"
+                <a href=" @Url.Action("Delete", "Owner", new { ownerId = Model.OwnerID})"
                    class="btn btn-danger btn-round">
                     <i class="fa fa-trash"> </i> Delete
                 </a>
 
                 @*--SelectButton---*@
 
-                <a href=" @Url.Action("ViewNominees", "Nominee", new { ownerId = Model.OwnerId, propertyId = propertyId })"
+                <a href=" @Url.Action("ViewNominees", "Nominee", new { ownerId = Model.OwnerID, propertyId = propertyId })"
                    class="btn btn-success btn-round">
                     Select
                 </a>

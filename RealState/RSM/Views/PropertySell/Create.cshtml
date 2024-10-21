@@ -32,10 +32,10 @@
 
                 <div class="form-group">
 
-                    @Html.LabelFor(model => model.Onbooking, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    @Html.LabelFor(model => model.PaymentOnBooking, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.Onbooking, new { htmlAttributes = new { @class = "form-control", placeholder = "Onbooking" } })
-                        @Html.ValidationMessageFor(model => model.Onbooking, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.PaymentOnBooking, new { htmlAttributes = new { @class = "form-control", placeholder = "Onbooking" } })
+                        @Html.ValidationMessageFor(model => model.PaymentOnBooking, "", new { @class = "text-danger" })
 
                     </div>
                 </div>
@@ -48,23 +48,23 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.TotalCostOfLand, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    @Html.LabelFor(model => model.TotalCostOfProperty, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.TotalCostOfLand,
+                        @Html.EditorFor(model => model.TotalCostOfProperty,
 new
 {
     htmlAttributes = new { @class = "form-control", placeholder = "TotalCostOfLand" }
 })
-                        @Html.ValidationMessageFor(model => model.TotalCostOfLand, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.TotalCostOfProperty, "", new { @class = "text-danger" })
 
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Type, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    @Html.LabelFor(model => model.PaymentPlan, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.DropDownListFor(model => model.Type, new SelectList(ViewBag.typeList, "Value", "Text"),  // Placeholder text
+                        @Html.DropDownListFor(model => model.PaymentPlan, new SelectList(ViewBag.typeList, "Value", "Text"),  // Placeholder text
 new {@class = "form-control", placeholder = "Type" })
-                        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.PaymentPlan, "", new { @class = "text-danger" })
 
                     </div>
                 </div>
@@ -94,10 +94,10 @@ new {@class = "form-control", placeholder = "Type" })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Date, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    @Html.LabelFor(model => model.SoldDate, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control",placeholder= "Date" } })
-                        @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.SoldDate, new { htmlAttributes = new { @class = "form-control",placeholder= "Date" } })
+                        @Html.ValidationMessageFor(model => model.SoldDate, "", new { @class = "text-danger" })
 
                     </div>
                 </div>
@@ -110,18 +110,18 @@ new {@class = "form-control", placeholder = "Type" })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.TotalCostOfLand, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    @Html.LabelFor(model => model.TotalCostOfProperty, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.TotalCostOfLand, new { htmlAttributes = new { @class = "form-control",placeholder= "TotalCostOfLand" } })
-                        @Html.ValidationMessageFor(model => model.TotalCostOfLand, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.TotalCostOfProperty, new { htmlAttributes = new { @class = "form-control",placeholder= "TotalCostOfLand" } })
+                        @Html.ValidationMessageFor(model => model.TotalCostOfProperty, "", new { @class = "text-danger" })
 
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Recived, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+                    @Html.LabelFor(model => model.EntryByUser, new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        @Html.EditorFor(model => model.Recived, new { htmlAttributes = new { @class = "form-control", placeholder= "Recived" } })
-                        @Html.ValidationMessageFor(model => model.Recived, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.EntryByUser, new { htmlAttributes = new { @class = "form-control", placeholder= "Recived" } })
+                        @Html.ValidationMessageFor(model => model.EntryByUser, "", new { @class = "text-danger" })
 
                     </div>
                 </div>

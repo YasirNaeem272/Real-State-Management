@@ -7,13 +7,13 @@ namespace RSM.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class CreateInitial3 : IMigrationMetadata
+    public sealed partial class DatabseUpdateAfterSync : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateInitial3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DatabseUpdateAfterSync));
         
         string IMigrationMetadata.Id
         {
-            get { return "202410041811165_CreateInitial3"; }
+            get { return "202410211740230_DatabseUpdateAfterSync"; }
         }
         
         string IMigrationMetadata.Source

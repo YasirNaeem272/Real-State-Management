@@ -64,53 +64,17 @@
     <Compile Include="Migrations\202410021733060_InitialCreate.designer.cs">
       <DependentUpon>202410021733060_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202410041745252_CreateInitial.cs" />
-    <Compile Include="Migrations\202410041745252_CreateInitial.designer.cs">
-      <DependentUpon>202410041745252_CreateInitial.cs</DependentUpon>
+    <Compile Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs" />
+    <Compile Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.Designer.cs">
+      <DependentUpon>202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202410041753534_CreateInitial2.cs" />
-    <Compile Include="Migrations\202410041753534_CreateInitial2.designer.cs">
-      <DependentUpon>202410041753534_CreateInitial2.cs</DependentUpon>
+    <Compile Include="Migrations\202410211740230_DatabseUpdateAfterSync.cs" />
+    <Compile Include="Migrations\202410211740230_DatabseUpdateAfterSync.Designer.cs">
+      <DependentUpon>202410211740230_DatabseUpdateAfterSync.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202410041811165_CreateInitial3.cs" />
-    <Compile Include="Migrations\202410041811165_CreateInitial3.designer.cs">
-      <DependentUpon>202410041811165_CreateInitial3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410041814544_CreateInitial31.cs" />
-    <Compile Include="Migrations\202410041814544_CreateInitial31.designer.cs">
-      <DependentUpon>202410041814544_CreateInitial31.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410041817300_CreateInitial4.cs" />
-    <Compile Include="Migrations\202410041817300_CreateInitial4.designer.cs">
-      <DependentUpon>202410041817300_CreateInitial4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410101812491_AddEnum.cs" />
-    <Compile Include="Migrations\202410101812491_AddEnum.designer.cs">
-      <DependentUpon>202410101812491_AddEnum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410101955180_RemoveOpenSide.cs" />
-    <Compile Include="Migrations\202410101955180_RemoveOpenSide.designer.cs">
-      <DependentUpon>202410101955180_RemoveOpenSide.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410111101265_UpdatedProperties.cs" />
-    <Compile Include="Migrations\202410111101265_UpdatedProperties.designer.cs">
-      <DependentUpon>202410111101265_UpdatedProperties.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410111104585_CorrectProperty.cs" />
-    <Compile Include="Migrations\202410111104585_CorrectProperty.designer.cs">
-      <DependentUpon>202410111104585_CorrectProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410171149293_AddPropertySellC.cs" />
-    <Compile Include="Migrations\202410171149293_AddPropertySellC.designer.cs">
-      <DependentUpon>202410171149293_AddPropertySellC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410171601469_UpdatePropertySell.cs" />
-    <Compile Include="Migrations\202410171601469_UpdatePropertySell.designer.cs">
-      <DependentUpon>202410171601469_UpdatePropertySell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.cs" />
-    <Compile Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.designer.cs">
-      <DependentUpon>202410201946115_DatabaseUpdateAfterMerge.cs</DependentUpon>
+    <Compile Include="Migrations\202410211855188_ChangesInPropertySellTable.cs" />
+    <Compile Include="Migrations\202410211855188_ChangesInPropertySellTable.Designer.cs">
+      <DependentUpon>202410211855188_ChangesInPropertySellTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,41 +94,14 @@
     <EmbeddedResource Include="Migrations\202410021733060_InitialCreate.resx">
       <DependentUpon>202410021733060_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410041745252_CreateInitial.resx">
-      <DependentUpon>202410041745252_CreateInitial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.resx">
+      <DependentUpon>202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410041753534_CreateInitial2.resx">
-      <DependentUpon>202410041753534_CreateInitial2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410211740230_DatabseUpdateAfterSync.resx">
+      <DependentUpon>202410211740230_DatabseUpdateAfterSync.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410041811165_CreateInitial3.resx">
-      <DependentUpon>202410041811165_CreateInitial3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410041814544_CreateInitial31.resx">
-      <DependentUpon>202410041814544_CreateInitial31.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410041817300_CreateInitial4.resx">
-      <DependentUpon>202410041817300_CreateInitial4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410101812491_AddEnum.resx">
-      <DependentUpon>202410101812491_AddEnum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410101955180_RemoveOpenSide.resx">
-      <DependentUpon>202410101955180_RemoveOpenSide.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410111101265_UpdatedProperties.resx">
-      <DependentUpon>202410111101265_UpdatedProperties.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410111104585_CorrectProperty.resx">
-      <DependentUpon>202410111104585_CorrectProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410171149293_AddPropertySellC.resx">
-      <DependentUpon>202410171149293_AddPropertySellC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410171601469_UpdatePropertySell.resx">
-      <DependentUpon>202410171601469_UpdatePropertySell.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.resx">
-      <DependentUpon>202410201946115_DatabaseUpdateAfterMerge.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410211855188_ChangesInPropertySellTable.resx">
+      <DependentUpon>202410211855188_ChangesInPropertySellTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

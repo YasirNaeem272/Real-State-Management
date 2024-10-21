@@ -98,18 +98,18 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.South)
                             </td>
-                           
+
                             <td>
-                                @Html.ActionLink("Edit", "EditProperty", new { id = item.PropertyID }) @*|
-                                @Html.ActionLink("Details", "Index", new { id = item.ID }) |*@
-                                @*@Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+                                @Html.ActionLink("Edit", "EditProperty", new { id = item.PropertyID }, new { @class = "btn btn-info btn-rounded" }) |
+                                @Html.ActionLink("Print", "Details", new { id = item.PropertyID }, new { @class = "btn btn-info btn-rounded" })
+                                @Html.ActionLink("Sell", "ViewOwners", "Owner", new { propertyId = item.PropertyID, isSelectionMode = true }, new { @class = "btn btn-success" })
                             </td>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 
