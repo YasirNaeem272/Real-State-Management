@@ -49,10 +49,12 @@ namespace RSM.BOL.Models
         public int Balance { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public string SoldDate { get; set; }
 
         [Required(ErrorMessage = "Possession Date is Required")]
         [DisplayName("Possession Date")]
+        [DataType(DataType.Date)]
         public string PossessionDate { get; set; }
 
 
@@ -63,6 +65,22 @@ namespace RSM.BOL.Models
         public int EntryByUser { get; set; } //(Currently logged in user)
         [Required]
         public int CareOf { get; set; } 
+
+
+        public PropertySell(bool isTesting = false)
+        {
+            if(isTesting)
+            {
+                PaymentOnBooking = 100000;
+                PossessionCharges = 50000;
+                TotalCostOfProperty = 2000000;
+                CornerCharges = 50000;
+                DevelopmentCharges = 200000;
+                SoldDate = DateTime.Now.ToString();
+                PossessionDate = new DateTime(2024, 11, 5).ToString();
+                NumberOfInstallments = 12;
+            }
+        }
 
     }
     public enum PaymentPlan

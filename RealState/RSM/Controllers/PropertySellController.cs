@@ -2,6 +2,7 @@
 using RSM.DAL.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,7 +22,17 @@ namespace RSM.Controllers
 
         public ActionResult ConfirmSale()
         {
-            return View();
+            var propertySell = new PropertySell(true);
+            return View(propertySell);
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult ConfirmSale(PropertySell propertySell)
+        {
+            propertySell.EntryByUser = 1;
+            propertySell.CareOf = 2;
+            return View(propertySell);
         }
 
 
@@ -80,6 +91,5 @@ namespace RSM.Controllers
             var list = _ctx.propertySells.ToList();
             return View(list);
         }
-
     }
 }
