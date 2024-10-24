@@ -102,7 +102,7 @@
                             <td>
                                 @Html.ActionLink("Edit", "EditProperty", new { id = item.PropertyID }, new { @class = "btn btn-info btn-rounded" }) |
                                 @Html.ActionLink("Print", "Details", new { id = item.PropertyID }, new { @class = "btn btn-info btn-rounded" })
-                                @Html.ActionLink("Sell", "ViewOwners", "Owner", new { propertyId = item.PropertyID, isSelectionMode = true }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("Sell", "GetSelectedProperty", "Property", new { propertyId = item.PropertyID}, new { @class = "btn btn-success" })
                             </td>
                         </tr>
                             }

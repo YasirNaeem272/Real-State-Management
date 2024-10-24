@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<RSM.BOL.Models.Nominee>
 
-@{
+@*CommentedByMUI*@
+@*@{
     int propertyId = ViewBag.PropertyID;
     int ownerId = ViewBag.OwnerID;
-}
+}*@
 
 @{
     ViewBag.Title = "ViewNominees";
@@ -78,7 +79,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.NomineeId }) |
-                <a href="@Url.Action("ConfirmSale", "PropertySell", new { ownerId = ownerId, propertyId = propertyId  })" class="btn btn-success">Confirm</a>
+                <a href="@Url.Action("GetSelectedNominee", "Nominee", new { nomineeId = item.NomineeId})" class="btn btn-success">Confirm</a>
 
             </td>
         </tr>

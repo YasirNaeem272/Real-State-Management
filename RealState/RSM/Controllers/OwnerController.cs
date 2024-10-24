@@ -7,6 +7,7 @@ using RSM.DAL.Context;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity.Core.Metadata.Edm;
 
 namespace RSM.Controllers
 {
@@ -15,15 +16,24 @@ namespace RSM.Controllers
         private ImageValidation _imageValidation = new ImageValidation();
         private DBOperations_Owners _dbOperations = new DBOperations_Owners();
 
-        public ActionResult ViewOwners(int propertyId = 0, bool isSelectionMode = false)
+        public ActionResult ViewOwners(/*int propertyId = 0, bool isSelectionMode = false*/)
         {
             //fetch All Owners
             var owners = _dbOperations.GetOwners();
 
             //save property id get property page to pass it ViewownerPage
-            ViewBag.PropertyID = propertyId;
+            //ViewBag.PropertyID = propertyId;
             return View(owners);
         }
+
+        public ActionResult GetSelectedOwner(int ownerId)
+        {
+            Session["ownerId"] = ownerId;
+            return RedirectToAction("ViewNominees", "Nominee");
+        }
+
+
+
 
         public ActionResult AddOwner()
         {

@@ -43,7 +43,7 @@
 
                 @*--SelectButton---*@
 
-                <a href=" @Url.Action("ViewNominees", "Nominee", new { ownerId = Model.OwnerID, propertyId = propertyId })"
+                <a href=" @Url.Action("GetSelectedOwner", "Owner", new { ownerId = Model.OwnerID})"
                    class="btn btn-success btn-round">
                     Select
                 </a>

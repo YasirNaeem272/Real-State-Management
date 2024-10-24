@@ -11,14 +11,23 @@ namespace RSM.Controllers
         private ImageValidation _imageValidation = new ImageValidation();
         private DBOperations_Nominees _dbOperations = new DBOperations_Nominees();
 
-        public ActionResult ViewNominees(int ownerId, int propertyId)
+        public ActionResult ViewNominees()
         {
+            int ownerId = (int)Session["ownerId"];
             // Fetch nominees for the selected owner
-            var nominees = _dbOperations.GetNomineeByOwnerId(ownerId); 
-            ViewBag.OwnerID = ownerId;
-            ViewBag.PropertyID = propertyId;
+            var nominees = _dbOperations.GetNomineeByOwnerId(ownerId);
+
+            //CommentedByMUI
+            //ViewBag.OwnerID = ownerId;
+            //ViewBag.PropertyID = propertyId;
             return View(nominees);
         }
+        public ActionResult GetSelectedNominee(int nomineeId)
+        {
+            Session["nomineeId"] = nomineeId;
+            return RedirectToAction("ConfirmSale", "PropertySell");
+        }
+
         public ActionResult AddNominee(/*int ownerID*/)
         {
             Nominee nominee = new Nominee {

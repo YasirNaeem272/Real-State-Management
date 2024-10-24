@@ -18,7 +18,7 @@ namespace RSM.DAL.DatabaseService
         }
         public void Create(PropertySell propertySell)
         {
-        _ctx.propertySells.Add(propertySell);   
+        _ctx.propertySales.Add(propertySell);   
         _ctx.SaveChanges();
         }
     }
