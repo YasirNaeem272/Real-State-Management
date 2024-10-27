@@ -29,9 +29,6 @@ namespace RSM.Controllers
         public ActionResult ConfirmSale()
         {
             var propertySell = new PropertySell();
-            var propertyId = Session["propertyID"];
-            var ownerId = Session["ownerId"];
-            var NomineeId = Session["nomineeId"];
             return View(propertySell);
         }
 
@@ -41,11 +38,29 @@ namespace RSM.Controllers
         {
             if(ModelState.IsValid)
             {
+                var propertyId = (int)Session["propertyID"];
+                var ownerId = (int)Session["ownerId"];
+                var nomineeId = (int)Session["nomineeId"];
+
+                var saleSummaryData = _saleLogic.GetPropertySaleSummary(propertyId, ownerId, nomineeId, propertySell);
+
+                Session["SaleSummary"] = saleSummaryData ;
+
+
+                //return View(propertySell);
+
                 return RedirectToAction("PropertySaleSummary", "PropertySell");
-
-
             }
-          
+            return View();
+        }
+
+        public ActionResult PropertySaleSummary()
+        {
+            var saleSummaryData = Session["SaleSummary"] as Tuple<Owner, Property, Nominee, PropertySell>;
+
+            if(saleSummaryData != null)
+                return View(saleSummaryData);
+
             return View();
         }
 

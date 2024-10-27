@@ -41,5 +41,10 @@ namespace RSM.DAL.DatabaseService
             //return Json(properties, JsonRequestBehavior.AllowGet);
         }
 
+        public Property GetPropertyByID(int propertyId)
+        {
+            return _ctx.Properties.Where(n => n.PropertyID == propertyId).FirstOrDefault();
+        }
+
     }
 }

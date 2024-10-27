@@ -61,8 +61,14 @@ namespace RSM.BOL.Models
         [Required(ErrorMessage = "Number of Installments is Required")]
         [DisplayName("Installments")]
         public int NumberOfInstallments { get; set; }
+
+        [NotMapped]
+        public float PerMonthInstallment { get; set; }
         [Required]
-        public int EntryByUser { get; set; } //(Currently logged in user)
+        public int EntryByUser { get; set; } //(Currently logged in user) 
+
+        [Required]
+        public PaymentType PaymentType { get; set; } 
         [Required]
         public int CareOf { get; set; } 
     }
@@ -72,3 +78,11 @@ namespace RSM.BOL.Models
         Installlement=1,
         FullPaid=2
     }
+
+public enum PaymentType
+{
+    Cash = 1,
+    Online = 2
+}
+
+

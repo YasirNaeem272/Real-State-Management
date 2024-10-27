@@ -76,6 +76,10 @@
     <Compile Include="Migrations\202410211855188_ChangesInPropertySellTable.Designer.cs">
       <DependentUpon>202410211855188_ChangesInPropertySellTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202410262143292_AddedPaymentTypeInPropertySellTable.cs" />
+    <Compile Include="Migrations\202410262143292_AddedPaymentTypeInPropertySellTable.Designer.cs">
+      <DependentUpon>202410262143292_AddedPaymentTypeInPropertySellTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DatabaseService\PropertySellDb.cs" />
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410211855188_ChangesInPropertySellTable.resx">
       <DependentUpon>202410211855188_ChangesInPropertySellTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410262143292_AddedPaymentTypeInPropertySellTable.resx">
+      <DependentUpon>202410262143292_AddedPaymentTypeInPropertySellTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

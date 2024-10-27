@@ -23,6 +23,11 @@ namespace RSM.DAL.DatabaseService
         {
             return _ctx.Owners.ToList();
         }
-       
+
+        public Owner GetOwnerByID(int ownerId)
+        {
+          return _ctx.Owners.Where(n => n.OwnerID == ownerId).FirstOrDefault();
+        }
+
     }
 }

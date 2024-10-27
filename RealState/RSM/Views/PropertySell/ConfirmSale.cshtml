@@ -109,6 +109,14 @@
                 </div>
 
                 <div class="form-group">
+                    @Html.LabelFor(model => model.PaymentType, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-7">
+                        @Html.EnumDropDownListFor(model => model.PaymentType, "Choose Payment Type", htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PaymentType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
                     @Html.LabelFor(model => model.EntryByUser, htmlAttributes: new { @class = "control-label col-md-4" })
                     <div class="col-md-6">
                         @Html.EditorFor(model => model.EntryByUser, new { htmlAttributes = new { @class = "form-control" } })
