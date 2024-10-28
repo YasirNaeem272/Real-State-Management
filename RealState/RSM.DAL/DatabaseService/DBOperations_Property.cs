@@ -21,7 +21,7 @@ namespace RSM.DAL.DatabaseService
             return _ctx.Properties.ToList();
         }
 
-        public bool UpdatePropertyOwner(int ownerId, int propertyId)
+        public bool UpdatePropertyOwnerAndStatus(int ownerId, int propertyId)
         {
             var property = _ctx.Properties.Find(propertyId);
             if (property != null)

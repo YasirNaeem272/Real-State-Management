@@ -17,18 +17,17 @@ namespace RSM.Controllers
         private readonly RSMContext _ctx;
         private readonly PropertySaleLogic _saleLogic;
 
+
         
         public PropertySellController()
         {
             _ctx = new RSMContext();
             _saleLogic = new PropertySaleLogic();
         }
-        //property Id = 1
-        //OwnerId = 3
 
         public ActionResult ConfirmSale()
         {
-            var propertySell = new PropertySell();
+            var propertySell = CreateDummyData();
             return View(propertySell);
         }
 
@@ -47,9 +46,21 @@ namespace RSM.Controllers
                 Session["SaleSummary"] = saleSummaryData ;
 
 
-                //return View(propertySell);
 
-                return RedirectToAction("PropertySaleSummary", "PropertySell");
+                //add property sell record
+                //update property status to sold 
+                //update owner ID in property table
+                var isDataUpdatedInDB =_saleLogic.OnConfirmSaleRequested(propertyId, ownerId, propertySell);
+
+                if(isDataUpdatedInDB)
+                {
+                    return RedirectToAction("PropertySaleSummary", "PropertySell");
+                }
+                else
+                {
+                    Console.WriteLine("Something went wrong");
+                }
+
             }
             return View();
         }
@@ -64,27 +75,6 @@ namespace RSM.Controllers
             return View();
         }
 
-
-        public ActionResult Create()
-        {
-            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<PaymentPlan>(), "Value", "Text");
-
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Create(PropertySell propertySell)
-        {
-            ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<PaymentPlan>(), "Value", "Text");
-            if (ModelState.IsValid)
-            {
-                propertySell.PropertyID = 1;
-                _ctx.propertySales.Add(propertySell);
-                _ctx.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View();
-        }
         [HttpGet]
         public ActionResult Edit(int id)
         {
