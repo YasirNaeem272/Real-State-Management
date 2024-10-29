@@ -21,7 +21,7 @@ namespace RSM.DAL.DatabaseService
             return _ctx.Properties.ToList();
         }
 
-        public bool UpdatePropertyOwner(int ownerId, int propertyId)
+        public bool UpdatePropertyOwnerAndStatus(int ownerId, int propertyId)
         {
             var property = _ctx.Properties.Find(propertyId);
             if (property != null)
@@ -39,6 +39,11 @@ namespace RSM.DAL.DatabaseService
             return  _ctx.Properties
                     .Where(p => p.OwnerId == id).ToList();
             //return Json(properties, JsonRequestBehavior.AllowGet);
+        }
+
+        public Property GetPropertyByID(int propertyId)
+        {
+            return _ctx.Properties.Where(n => n.PropertyID == propertyId).FirstOrDefault();
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -15,38 +16,73 @@ namespace RSM.BOL.Models
         public int PropertyID  { get; set; } //FK
         [ForeignKey("PropertyID")]
         public virtual Property Property { get; set; }
-        [Required]
-        public string Onbooking { get; set; }
-        [Required]
+
+        [Required(ErrorMessage ="Payment on Booking is Required")]
+        [DisplayName("Payment on Booking")]
+        public int PaymentOnBooking { get; set; }
+
+
+        [Required(ErrorMessage = "Possession Charges is Required")]
+        [DisplayName("Possession Charges")]
         public int PossessionCharges { get; set; }
-        [Required]
-        public int TotalCostOfLand { get; set; }
-        [Required]
-        public string Type { get; set; } //(Installlement/FullPaid)
-        [NotMapped]
-        public Type Types { get; set; } //(Installlement/FullPaid)
-        [Required]
+
+
+        [Required(ErrorMessage = "Total cost is Required")]
+        [DisplayName("Total cost of Property")]
+        public int TotalCostOfProperty { get; set; }
+
+        [Required(ErrorMessage = "Payment Plan is Required")]
+        [DisplayName("Payment Plan")]
+        public PaymentPlan PaymentPlan { get; set; } //(Installlement/FullPaid)
+
+
+        [Required(ErrorMessage = "Corner Charges is Required")]
+        [DisplayName("Corner Charges")]
         public int CornerCharges { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage = "Development Charges is Required")]
+        [DisplayName("Development Charges")]
         public int DevelopmentCharges { get; set; }
+
         [Required]
         public int Balance { get; set; }
-        [Required]
-        public string Date { get; set; }
-        [Required]
-        public string PossessionDate { get; set; }
-        [Required]
-        public int TotalInsMonth { get; set; }
-        [Required]
-        public int Recived { get; set; } //(Which User)
-        [Required]
-        public string CareOf { get; set; } 
 
-    }
-    public enum Type
-    {
-        Installlement=1,
-        
-        FullPaid=2
+        [Required]
+        [DataType(DataType.Date)]
+        public string SoldDate { get; set; }
+
+        [Required(ErrorMessage = "Possession Date is Required")]
+        [DisplayName("Possession Date")]
+        [DataType(DataType.Date)]
+        public string PossessionDate { get; set; }
+
+
+        [Required(ErrorMessage = "Number of Installments is Required")]
+        [DisplayName("Installments")]
+        public int NumberOfInstallments { get; set; }
+
+        [NotMapped]
+        public float PerMonthInstallment { get; set; }
+        [Required]
+        public int EntryByUser { get; set; } //(Currently logged in user) 
+
+        [Required]
+        public PaymentType PaymentType { get; set; } 
+        [Required]
+        public int CareOf { get; set; } 
     }
 }
+    public enum PaymentPlan
+    {
+        Installlement=1,
+        FullPaid=2
+    }
+
+public enum PaymentType
+{
+    Cash = 1,
+    Online = 2
+}
+
+

@@ -4429,6 +4429,8 @@
     <Content Include="Views\Nominee\AddNominee.cshtml" />
     <Content Include="Views\Nominee\ViewNominees.cshtml" />
     <Content Include="Views\Shared\_OwnerPartialView.cshtml" />
+    <Content Include="Views\PropertySell\ConfirmSale.cshtml" />
+    <Content Include="Views\PropertySell\PropertySaleSummary.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>

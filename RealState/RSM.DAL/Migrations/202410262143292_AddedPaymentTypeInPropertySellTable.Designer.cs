@@ -7,13 +7,13 @@ namespace RSM.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class UpdatePropertySell : IMigrationMetadata
+    public sealed partial class AddedPaymentTypeInPropertySellTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatePropertySell));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedPaymentTypeInPropertySellTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202410171601469_UpdatePropertySell"; }
+            get { return "202410262143292_AddedPaymentTypeInPropertySellTable"; }
         }
         
         string IMigrationMetadata.Source

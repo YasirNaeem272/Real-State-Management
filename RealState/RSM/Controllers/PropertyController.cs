@@ -93,6 +93,17 @@ namespace RSM.Controllers
             var list = _ctx.Properties.ToList();
             return View(list);
         }
+
+        public ActionResult GetSelectedProperty(int propertyID)
+        {
+            Session["propertyID"] = propertyID;
+
+            //redirecting to owners viewOwners Page
+            return RedirectToAction("ViewOwners", "Owner");
+        }
+
+      
+
         public ActionResult Delete(int id)
         {
             var list = _ctx.Properties.Find(id);

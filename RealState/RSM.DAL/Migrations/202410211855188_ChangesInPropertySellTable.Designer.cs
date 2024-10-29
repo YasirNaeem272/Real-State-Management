@@ -7,13 +7,13 @@ namespace RSM.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class RemoveOpenSide : IMigrationMetadata
+    public sealed partial class ChangesInPropertySellTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveOpenSide));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangesInPropertySellTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202410101955180_RemoveOpenSide"; }
+            get { return "202410211855188_ChangesInPropertySellTable"; }
         }
         
         string IMigrationMetadata.Source

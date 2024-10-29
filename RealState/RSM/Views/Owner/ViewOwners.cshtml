@@ -22,7 +22,7 @@
                 <div class="row">
                     @foreach (var item in Model)
                     {
-                        @Html.Partial("_OwnerPartialView", item, new ViewDataDictionary { { "PropertyID", ViewBag.PropertyID } })
+                        @Html.Partial("_OwnerPartialView", item@*, new ViewDataDictionary { { "PropertyID", ViewBag.PropertyID } }*@)
                     }
                 </div>
             </div>

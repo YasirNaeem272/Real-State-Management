@@ -8,18 +8,12 @@ using System.Threading.Tasks;
 
 namespace RSM.DAL.DatabaseService
 {
-    public class PropertySellDb
+    public class PropertySellDb:DBOperations
     {
-        private readonly RSMContext _ctx;
-
-        public PropertySellDb() 
+        public bool InsertPropertySaleData(PropertySell propertySell)
         {
-         _ctx = new RSMContext();
-        }
-        public void Create(PropertySell propertySell)
-        {
-        _ctx.propertySells.Add(propertySell);   
-        _ctx.SaveChanges();
+            _ctx.propertySales.Add(propertySell);
+            return _ctx.SaveChanges() > 0;
         }
     }
 }
