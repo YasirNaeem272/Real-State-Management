@@ -12,7 +12,7 @@ namespace RSM.DAL.DatabaseService
     {
         public bool InsertPropertySaleData(PropertySell propertySell)
         {
-            _ctx.propertySales.Add(propertySell);
+            _ctx.PropertySells.Add(propertySell);
             return _ctx.SaveChanges() > 0;
         }
     }

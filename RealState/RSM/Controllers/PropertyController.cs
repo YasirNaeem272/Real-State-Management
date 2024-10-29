@@ -111,15 +111,7 @@ namespace RSM.Controllers
             _ctx.SaveChanges();
             return RedirectToAction("ViewProperties");
         }
-        //This work will done in property sell table do Here just for now
-        public ActionResult ConfirmSale(int ownerId, int propertyId)
-        {
-            _dbOperations.UpdatePropertyOwner(ownerId, propertyId);
-
-
-            return RedirectToAction("ViewProperties", "Property"); // Redirect back to the list of properties
-        }
-
+       
         private Property CreateDummyData()
         {
             return new Property

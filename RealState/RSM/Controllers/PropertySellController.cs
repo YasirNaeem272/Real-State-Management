@@ -80,14 +80,14 @@ namespace RSM.Controllers
         {
             ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<PaymentPlan>(), "Value", "Text");
 
-            var data = _ctx.propertySales.Find(id);
+            var data = _ctx.PropertySells.Find(id);
             return View(data);
         }
         [HttpPost]
         public ActionResult Edit(PropertySell model) 
         {
             ViewBag.typeList = new SelectList(Helper.GetEnumSelectList<PaymentPlan>(), "Value", "Text");
-            var data = _ctx.propertySales.Find(model.ID);
+            var data = _ctx.PropertySells.Find(model.ID);
             if(data != null && ModelState.IsValid)
             {
 
@@ -107,7 +107,7 @@ namespace RSM.Controllers
         }
         public ActionResult Index()
         {
-            var list = _ctx.propertySales.ToList();
+            var list = _ctx.PropertySells.ToList();
             return View(list);
         }
 

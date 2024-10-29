@@ -7,13 +7,13 @@ namespace RSM.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class ChangesInPropertySellTable : IMigrationMetadata
+    public sealed partial class DatabaseUpdateAfterSecondMerge : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangesInPropertySellTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DatabaseUpdateAfterSecondMerge));
         
         string IMigrationMetadata.Id
         {
-            get { return "202410211855188_ChangesInPropertySellTable"; }
+            get { return "202410291940078_DatabaseUpdateAfterSecondMerge"; }
         }
         
         string IMigrationMetadata.Source

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ChangesInPropertySellTable : DbMigration
+    public partial class DatabaseUpdateAfterSecondMerge : DbMigration
     {
         public override void Up()
         {
@@ -13,6 +13,7 @@
             AddColumn("dbo.PropertySells", "SoldDate", c => c.String(nullable: false));
             AddColumn("dbo.PropertySells", "NumberOfInstallments", c => c.Int(nullable: false));
             AddColumn("dbo.PropertySells", "EntryByUser", c => c.Int(nullable: false));
+            AddColumn("dbo.PropertySells", "PaymentType", c => c.Int(nullable: false));
             AlterColumn("dbo.PropertySells", "CareOf", c => c.Int(nullable: false));
             DropColumn("dbo.PropertySells", "Onbooking");
             DropColumn("dbo.PropertySells", "TotalCostOfLand");
@@ -31,6 +32,7 @@
             AddColumn("dbo.PropertySells", "TotalCostOfLand", c => c.Int(nullable: false));
             AddColumn("dbo.PropertySells", "Onbooking", c => c.String(nullable: false));
             AlterColumn("dbo.PropertySells", "CareOf", c => c.String(nullable: false));
+            DropColumn("dbo.PropertySells", "PaymentType");
             DropColumn("dbo.PropertySells", "EntryByUser");
             DropColumn("dbo.PropertySells", "NumberOfInstallments");
             DropColumn("dbo.PropertySells", "SoldDate");

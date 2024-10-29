@@ -65,33 +65,9 @@
     <Compile Include="Migrations\202410021733060_InitialCreate.designer.cs">
       <DependentUpon>202410021733060_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs" />
-    <Compile Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.Designer.cs">
-      <DependentUpon>202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410211740230_DatabseUpdateAfterSync.cs" />
-    <Compile Include="Migrations\202410211740230_DatabseUpdateAfterSync.Designer.cs">
-      <DependentUpon>202410211740230_DatabseUpdateAfterSync.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410211855188_ChangesInPropertySellTable.cs" />
-    <Compile Include="Migrations\202410211855188_ChangesInPropertySellTable.Designer.cs">
-      <DependentUpon>202410211855188_ChangesInPropertySellTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410262143292_AddedPaymentTypeInPropertySellTable.cs" />
-    <Compile Include="Migrations\202410262143292_AddedPaymentTypeInPropertySellTable.Designer.cs">
-      <DependentUpon>202410262143292_AddedPaymentTypeInPropertySellTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410210742336_AddUser_Role.cs" />
-    <Compile Include="Migrations\202410210742336_AddUser_Role.designer.cs">
-      <DependentUpon>202410210742336_AddUser_Role.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410241242327_AddTwoProperty.cs" />
-    <Compile Include="Migrations\202410241242327_AddTwoProperty.designer.cs">
-      <DependentUpon>202410241242327_AddTwoProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202410241334447_AddTwoProperty1.cs" />
-    <Compile Include="Migrations\202410241334447_AddTwoProperty1.designer.cs">
-      <DependentUpon>202410241334447_AddTwoProperty1.cs</DependentUpon>
+    <Compile Include="Migrations\202410291940078_DatabaseUpdateAfterSecondMerge.cs" />
+    <Compile Include="Migrations\202410291940078_DatabaseUpdateAfterSecondMerge.designer.cs">
+      <DependentUpon>202410291940078_DatabaseUpdateAfterSecondMerge.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,26 +87,8 @@
     <EmbeddedResource Include="Migrations\202410021733060_InitialCreate.resx">
       <DependentUpon>202410021733060_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.resx">
-      <DependentUpon>202410171909455_AddPropertyAndNomineeTablesAndUpdateOwner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410211740230_DatabseUpdateAfterSync.resx">
-      <DependentUpon>202410211740230_DatabseUpdateAfterSync.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410211855188_ChangesInPropertySellTable.resx">
-      <DependentUpon>202410211855188_ChangesInPropertySellTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410262143292_AddedPaymentTypeInPropertySellTable.resx">
-      <DependentUpon>202410262143292_AddedPaymentTypeInPropertySellTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410210742336_AddUser_Role.resx">
-      <DependentUpon>202410210742336_AddUser_Role.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410241242327_AddTwoProperty.resx">
-      <DependentUpon>202410241242327_AddTwoProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410241334447_AddTwoProperty1.resx">
-      <DependentUpon>202410241334447_AddTwoProperty1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410291940078_DatabaseUpdateAfterSecondMerge.resx">
+      <DependentUpon>202410291940078_DatabaseUpdateAfterSecondMerge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

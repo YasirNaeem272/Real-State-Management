@@ -26,8 +26,6 @@ namespace RSM.Controllers
                
                 owner.PropertyCount = owner.Properties.Count();
             }
-            //save property id get property page to pass it ViewownerPage
-            ViewBag.PropertyID = propertyId;
             return View(owners);
         }
          public ActionResult GetSelectedOwner(int ownerId)
@@ -35,16 +33,6 @@ namespace RSM.Controllers
             Session["ownerId"] = ownerId;
             return RedirectToAction("ViewNominees", "Nominee");
         }
-
-
-        public ActionResult GetSelectedOwner(int ownerId)
-        {
-            Session["ownerId"] = ownerId;
-            return RedirectToAction("ViewNominees", "Nominee");
-        }
-
-
-
 
         public ActionResult AddOwner()
         {

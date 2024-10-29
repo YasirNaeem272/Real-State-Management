@@ -49,20 +49,8 @@
                             @Html.DisplayNameFor(model => model.PropertyType)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model=>model.PropertyStatus)
+                            @Html.DisplayNameFor(model => model.PropertyStatus)
                         </th>
-                        @*<th>
-                            @Html.DisplayNameFor(model => model.North)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.East)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.West)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.South)
-                        </th>*@
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -89,18 +77,9 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.PropertyType)
                             </td>
-                            @*<td>
-                                @Html.DisplayFor(modelItem => item.North)
-                            </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.East)
+                                @Html.DisplayFor(modelItem => item.PropertyStatus)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.West)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.South)
-                            </td>*@
 
                             <td>
 
@@ -124,28 +103,24 @@
                                         }
                                         else
                                         {
-                                            <button class="btn btn-success">
-                                                <i class="fa fa-tags"> </i> &nbsp;&nbsp;Sell
+                                            <button class="btn btn-success" onclick="location.href='@Url.Action("GetSelectedProperty", "Property", new { propertyId = item.PropertyID })'">
+                                                <i class="fa fa-print"></i> &nbsp;&nbsp;Sell
                                             </button>
+                                            
                                         }
                                     }
 
                                 </div>
 
-
-                              
-
-
                             </td>
                         </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
+            
 <style>
 
     body {
@@ -218,7 +193,7 @@
     .section-buttons {
         display: flex;
         gap: 10px;
-        justify-content: flex-end;
+        justify-content: center;
         margin-top: 15px;
     }
 
