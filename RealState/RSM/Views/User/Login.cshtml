@@ -1,0 +1,184 @@
+﻿@model RSM.BOL.Models.User
+@{
+    Layout = null;
+}
+<link href="~/assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- NProgress -->
+<link href="~/assets/vendors/nprogress/nprogress.css" rel="stylesheet">
+<!-- Animate.css -->
+<link href="~/assets/vendors/animate.css/animate.min.css" rel="stylesheet">
+
+<!-- Custom Theme Style -->
+<link href="~/assets/build/css/custom.min.css" rel="stylesheet">
+
+    <div class="login-wrapper">
+        <div class="login-form">
+            @using (Html.BeginForm("Login", "User", FormMethod.Post))
+            {
+                <h1>Login</h1>
+                <div class="input-group">
+                    @Html.TextBoxFor(x => x.UserEmail, new { @class = "form-control", placeholder = "Email" })
+                    @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                    <span class="icon"><i class="fa fa-user"></i></span>
+                </div>
+
+                <div class="input-group">
+                    @Html.PasswordFor(x => x.UserPassword, new { @Id = "password", @class = "form-control", type = "password", placeholder = "Password" })
+                    <i id="toggleIcon1" class="fa fa-eye" onclick="togglePasswordVisibility('password', 'toggleIcon1')" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #304457;"></i>
+                    @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+                   
+                </div>
+
+                <div>
+
+                    <button type="submit" class="btn-login">Login</button>
+
+                    <a class="reset_pass" href="#">Lost your password?</a>
+                </div>
+
+                <div class="clearfix"></div>
+
+            }
+
+        </div>
+    </div>
+
+<style>
+
+    /* Background styling */
+    body {
+        /*background-image: url("./assets/production/images/dillon-kydd-2keCPb73aQY-unsplash.jpg");*/
+       /* background-image: url('../../assets/production/images/dillon-kydd-2kecpb73aqy-unsplash.jpg');*/
+        background-image: url('../../assets/production/images/backgroundimage.jpg');
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: center; /* Centers the image */
+        background-size: cover; /* Ensures the image covers the entire viewport */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+        margin: 0; /* Removes default margin */
+        font-family: Arial, sans-serif;
+    }
+
+    /* Login wrapper */
+    /*.login-wrapper {
+        background: #2A3F54;*/
+        /*background: rgba(100 102 109 / 68%);*/
+        /*background: rgba(255, 255, 255, 0.1);*/
+        /*border-radius: 15px;
+        padding: 30px;
+        width: 350px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }*/
+    .login-wrapper {
+        background: rgba(207 212 216 / 65%); /* Adjusted background color with 85% opacity */
+        border-radius: 15px;
+        padding: 30px;
+        width: 350px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Form styling */
+    .login-form h2 {
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    /* Input group styling */
+    .input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+        .input-group .form-control {
+            width: 100%;
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+            background: rgba(255, 255, 255, 255);
+            color: #304457;
+            padding-left: 40px;
+        }
+
+        .input-group .icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #304457;
+        }
+
+    /* Options styling */
+    .options {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    /* Button styling */
+    .btn-login {
+        background: #304457;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 800;
+        font-size: 1.1em;
+    }
+
+        .btn-login:hover {
+            /*background: #88badd;*/
+            background: #77a5c6;
+        }
+
+    /* Register link styling */
+    .register-link {
+        color: white;
+        margin-top: 15px;
+    }
+
+        .register-link a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    .reset_pass {
+        color: #304457;
+        font-weight: 600;
+        font-size: 1em;
+    }
+    h1 {
+        text-align: center;
+        color: #3d5b7a;
+        /*margin-bottom: 30px;*/
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+</style>
+
+<script type="text/javascript">
+    function togglePasswordVisibility(password, toggleIcon1) {
+        var passwordField = document.getElementById(password);
+        var icon = document.getElementById(toggleIcon1);
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    }
+</script>

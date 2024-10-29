@@ -19,7 +19,12 @@ namespace RSM.Controllers
         {
             //fetch All Owners
             var owners = _dbOperations.GetOwners();
-
+           
+            foreach (var owner in owners)
+            {
+               
+                owner.PropertyCount = owner.Properties.Count();
+            }
             //save property id get property page to pass it ViewownerPage
             ViewBag.PropertyID = propertyId;
             return View(owners);
@@ -40,6 +45,8 @@ namespace RSM.Controllers
                 SODOWO = "jsdujsdh",
                 DOB = DateTime.Now.ToString("yyyy-MM-dd"),
             };
+            //Session["OwnerId"] = ownerDummy.OwnerID;
+
             return View(ownerDummy);
         }
 
@@ -75,7 +82,7 @@ namespace RSM.Controllers
 
             return View();
         }
-       
+
     }
 }
 

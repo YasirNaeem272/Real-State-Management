@@ -34,7 +34,7 @@ namespace RSM.DAL.DatabaseService
             return false;
         }
         
-        public List<Property> GetPropertiesByOwner(int id)
+        public List<Property> GetPropertiesByOwner(int? id)
         {
             return  _ctx.Properties
                     .Where(p => p.OwnerId == id).ToList();

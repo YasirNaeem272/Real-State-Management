@@ -16,7 +16,7 @@ namespace RSM.Controllers
 {
     public class PropertyController : Controller
     {
-    private DBOperations_Property _dbOperations = new DBOperations_Property();
+        private DBOperations_Property _dbOperations = new DBOperations_Property();
 
         // GET: Property
         private readonly RSMContext _ctx;
@@ -28,7 +28,7 @@ namespace RSM.Controllers
         public ActionResult AddProperty()
         {
             Property property = new Property();
-            
+
 
             return View();
         }
@@ -61,7 +61,7 @@ namespace RSM.Controllers
         [HttpGet]
         public ActionResult EditProperty(int Id)
         {
-            
+
             var data = _ctx.Properties.Find(Id);
             //string idString = EncodeHash(data.ID);
             //data.ID = Convert.ToInt16(idString);
@@ -82,8 +82,8 @@ namespace RSM.Controllers
             //var data = _ctx.Properties.Find(model.PropertyID);
             //if (data != null)
             //{
-                _ctx.Entry(model).State=EntityState.Modified;
-                _ctx.SaveChanges();
+            _ctx.Entry(model).State = EntityState.Modified;
+            _ctx.SaveChanges();
             //}
             return RedirectToAction("ViewProperties");
         }
@@ -100,7 +100,7 @@ namespace RSM.Controllers
             _ctx.SaveChanges();
             return RedirectToAction("ViewProperties");
         }
- //This work will done in property sell table do Here just for now
+        //This work will done in property sell table do Here just for now
         public ActionResult ConfirmSale(int ownerId, int propertyId)
         {
             _dbOperations.UpdatePropertyOwner(ownerId, propertyId);
@@ -121,11 +121,34 @@ namespace RSM.Controllers
         }
 
 
-        public ActionResult GetPropertiesByOwnerId(int ownerId)
+        //public ActionResult GetPropertiesCountByOwnerId(int? ownerId)
+        //{
+        //    var properties = _dbOperations.GetPropertiesByOwner(ownerId).Count();
+        //    ViewBag.PropertyCount = properties;
+        //    return View();
+        //}
+        public ActionResult GetProperty()
         {
-            var properties=_dbOperations.GetPropertiesByOwner(ownerId).Count();
-            
             return View();
         }
+
+        public ActionResult GetPropertiesByOwnerId(int? ownerId)
+        {
+            var properties = _dbOperations.GetPropertiesByOwner(ownerId).Select(
+                p => new
+                {
+                    p.PropertyType,
+                    p.ProjectName,
+                });
+            return Json(properties, JsonRequestBehavior.AllowGet);
+        }
+        // public List<Property> GetPropertiesByOwnerId(int? ownerId)
+        // {
+        //     return _dbOperations.GetPropertiesByOwner(ownerId)
+        //.Select(p => new Property
+        //{
+        //    ProjectName = p.ProjectName
+        //}).ToList();
+        // }
     }
 }

@@ -57,6 +57,9 @@ namespace RSM.BOL.Models
         public virtual ICollection<Nominee> Nominees { get; set; } /*= new List<Nominee>();*/
 
         public virtual ICollection<Property> Properties { get; set; }
+      
+        [NotMapped]
+        public int PropertyCount { get; set; }
         //public DateTime EntryTime { get; set; }
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="DatabaseService\DBOperations_Nominees.cs" />
     <Compile Include="DatabaseService\dbOperations_Owners.cs" />
     <Compile Include="DatabaseService\DBOperations_Property.cs" />
+    <Compile Include="DatabaseService\UserDb.cs" />
     <Compile Include="Migrations\202410021733060_InitialCreate.cs" />
     <Compile Include="Migrations\202410021733060_InitialCreate.designer.cs">
       <DependentUpon>202410021733060_InitialCreate.cs</DependentUpon>
@@ -111,6 +112,18 @@
     <Compile Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.cs" />
     <Compile Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.designer.cs">
       <DependentUpon>202410201946115_DatabaseUpdateAfterMerge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410210742336_AddUser_Role.cs" />
+    <Compile Include="Migrations\202410210742336_AddUser_Role.designer.cs">
+      <DependentUpon>202410210742336_AddUser_Role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410241242327_AddTwoProperty.cs" />
+    <Compile Include="Migrations\202410241242327_AddTwoProperty.designer.cs">
+      <DependentUpon>202410241242327_AddTwoProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202410241334447_AddTwoProperty1.cs" />
+    <Compile Include="Migrations\202410241334447_AddTwoProperty1.designer.cs">
+      <DependentUpon>202410241334447_AddTwoProperty1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,6 +178,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202410201946115_DatabaseUpdateAfterMerge.resx">
       <DependentUpon>202410201946115_DatabaseUpdateAfterMerge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410210742336_AddUser_Role.resx">
+      <DependentUpon>202410210742336_AddUser_Role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410241242327_AddTwoProperty.resx">
+      <DependentUpon>202410241242327_AddTwoProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202410241334447_AddTwoProperty1.resx">
+      <DependentUpon>202410241334447_AddTwoProperty1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

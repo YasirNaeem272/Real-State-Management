@@ -49,6 +49,9 @@
                             @Html.DisplayNameFor(model => model.PropertyType)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model=>model.PropertyStatus)
+                        </th>
+                        @*<th>
                             @Html.DisplayNameFor(model => model.North)
                         </th>
                         <th>
@@ -59,7 +62,7 @@
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.South)
-                        </th>
+                        </th>*@
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -86,7 +89,7 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.PropertyType)
                             </td>
-                            <td>
+                            @*<td>
                                 @Html.DisplayFor(modelItem => item.North)
                             </td>
                             <td>
@@ -97,12 +100,42 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.South)
-                            </td>
-                           
+                            </td>*@
+
                             <td>
-                                @Html.ActionLink("Edit", "EditProperty", new { id = item.PropertyID }) @*|
-                                @Html.ActionLink("Details", "Index", new { id = item.ID }) |*@
-                                @*@Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+
+                                <div class="section-buttons">
+
+                                    <button class="btn primary-btn">
+                                        <i class="fa fa-edit"> </i> &nbsp;&nbsp;Edit
+                                    </button>
+
+                                    <button class="btn primary-btn">
+                                        <i class="fa fa-info-circle"> </i> &nbsp;&nbsp;Details
+                                    </button>
+                                    @{
+                                        if (item.PropertyStatus.ToString() == PropertyStatus.Sold.ToString()
+                                           || item.PropertyStatus.ToString() == PropertyStatus.Reserved.ToString())
+                                        {
+
+                                            <button class="btn btn-success">
+                                                <i class="fa fa-print"> </i> &nbsp;&nbsp;Print
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button class="btn btn-success">
+                                                <i class="fa fa-tags"> </i> &nbsp;&nbsp;Sell
+                                            </button>
+                                        }
+                                    }
+
+                                </div>
+
+
+                              
+
+
                             </td>
                         </tr>
                     }
@@ -111,5 +144,132 @@
         </div>
     </div>
 </div>
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        color: #3d5b7a;
+    }
+
+    .summary-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #3d5b7a;
+        margin-bottom: 30px;
+        font-size: 1.8em;
+        font-weight: 600;
+    }
 
 
+    .section {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+
+        .section h3 {
+            margin-top: 0;
+            color: #3d5b7a;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        font-size: 0.95em;
+    }
+
+        .info strong {
+            color: #3d5b7a;
+            font-weight: 600;
+        }
+
+        .info span {
+            color: #555;
+            font-weight: 400;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+
+    .section-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 15px;
+    }
+
+    .main-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+
+
+    .btn {
+        width: 90px;
+        height: 35px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        font-size: 0.95em;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-main {
+        width: 170px;
+        height: 45px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1em;
+        font-weight: 700;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .primary-btn {
+        background-color: #3d5b7a;
+        color: #ffffff;
+    }
+
+        .primary-btn:hover {
+            background-color: #88badd;
+        }
+
+
+    .section:hover {
+        box-shadow: 0 6px 12px rgba(61, 91, 122, 0.2);
+    }
+</style>

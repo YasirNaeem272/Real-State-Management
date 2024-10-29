@@ -2,6 +2,7 @@
 using RSM.BOL.Models;
 using RSM.DAL.DatabaseService;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace RSM.Controllers
@@ -71,6 +72,20 @@ namespace RSM.Controllers
             }
             ModelState.Clear();
             return View();
+        }
+
+        public ActionResult GetNomineesOwnerById(int ownerid)
+        {
+            var nominees = _dbOperations.GetNomineeByOwnerId(ownerid)
+                .Select(n=>
+                new
+                { 
+                    n.CNIC,
+                    n.ImagePath,
+                    n.Name,
+                    n.Relation
+                }).ToList();
+            return Json(nominees,JsonRequestBehavior.AllowGet);
         }
     }
 
