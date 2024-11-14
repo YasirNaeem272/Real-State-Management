@@ -35,7 +35,6 @@ namespace RSM.Controllers
                 Name = "Name",
                 CNIC = "45454",
                 Relation = RelationType.Friend,
-                //Relation = RelationType.Friend,
                 SODOWO = "So/Do/Wo",
                 DOB = DateTime.Now.ToString("yyyy-MM-dd"),
                 CellNo = "5644",

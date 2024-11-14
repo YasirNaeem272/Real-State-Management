@@ -25,7 +25,7 @@
                 <img src="@Url.Content(Model.ImagePath)" alt="" class="img-circle img-responsive">
             </div>
         </div>
-        <a id="showPopupButton" type="button" data-owner-id=@Model.OwnerID>Show Properties</a>
+        <a id="showPopupButton" type="button" class="showproperties" data-owner-id=@Model.OwnerID>Show Properties</a>
         <!--<button id="showPopupButton" type="button" data-owner-id=@Model.OwnerID>Show Properties</button>--> <!-- Assuming OwnerID is 101 for demonstration -->
         @*<a href="@Url.Action()"></a>*@
         <div class="col-xs-12 bottom text-center">
@@ -104,6 +104,10 @@
             float: right;
             font-size: 24px;
             font-weight: bold;
+            cursor: pointer;
+        }
+        .showproperties{
+
             cursor: pointer;
         }
     </style>

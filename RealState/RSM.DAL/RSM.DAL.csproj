@@ -65,9 +65,9 @@
     <Compile Include="Migrations\202410021733060_InitialCreate.designer.cs">
       <DependentUpon>202410021733060_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202410291940078_DatabaseUpdateAfterSecondMerge.cs" />
-    <Compile Include="Migrations\202410291940078_DatabaseUpdateAfterSecondMerge.designer.cs">
-      <DependentUpon>202410291940078_DatabaseUpdateAfterSecondMerge.cs</DependentUpon>
+    <Compile Include="Migrations\202410301809301_DatabseUpdateAfterMerge.cs" />
+    <Compile Include="Migrations\202410301809301_DatabseUpdateAfterMerge.Designer.cs">
+      <DependentUpon>202410301809301_DatabseUpdateAfterMerge.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +87,8 @@
     <EmbeddedResource Include="Migrations\202410021733060_InitialCreate.resx">
       <DependentUpon>202410021733060_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202410291940078_DatabaseUpdateAfterSecondMerge.resx">
-      <DependentUpon>202410291940078_DatabaseUpdateAfterSecondMerge.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202410301809301_DatabseUpdateAfterMerge.resx">
+      <DependentUpon>202410301809301_DatabseUpdateAfterMerge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,13 @@ namespace RSM.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class DatabaseUpdateAfterSecondMerge : IMigrationMetadata
+    public sealed partial class DatabseUpdateAfterMerge : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DatabaseUpdateAfterSecondMerge));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DatabseUpdateAfterMerge));
         
         string IMigrationMetadata.Id
         {
-            get { return "202410291940078_DatabaseUpdateAfterSecondMerge"; }
+            get { return "202410301809301_DatabseUpdateAfterMerge"; }
         }
         
         string IMigrationMetadata.Source

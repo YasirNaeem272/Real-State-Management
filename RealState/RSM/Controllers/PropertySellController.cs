@@ -1,6 +1,7 @@
 ﻿using RSM.BLL;
 using RSM.BOL.Models;
 using RSM.DAL.Context;
+using RSM.DAL.DatabaseService;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -27,7 +28,13 @@ namespace RSM.Controllers
 
         public ActionResult ConfirmSale()
         {
-            var propertySell = CreateDummyData();
+            //var propertySell = CreateDummyData();
+
+            var careOfOptions = _ctx.Users.Select(u => new { UserId = u.UserId, UserName = u.UserEmail }).ToList();
+            ViewBag.CareOfOptions = new SelectList(careOfOptions, "UserId", "UserName");
+
+            var propertySell = new PropertySell();
+            propertySell.Balance = 0;
             return View(propertySell);
         }
 
@@ -62,6 +69,9 @@ namespace RSM.Controllers
                 }
 
             }
+
+            var careOfOptions = _ctx.Users.Select(u => new { UserId = u.UserId, UserName = u.UserEmail }).ToList();
+            ViewBag.CareOfOptions = new SelectList(careOfOptions, "UserId", "UserName");
             return View();
         }
 
@@ -124,7 +134,7 @@ namespace RSM.Controllers
                 PossessionDate = new DateTime(2024, 11, 5).ToString("yyyy-MM-dd"),
                 NumberOfInstallments = 12,
                 EntryByUser = 1,
-                CareOf = 2
+                //CareOf = 2
             };
         }
     }
